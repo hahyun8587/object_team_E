@@ -36,7 +36,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF/nCvU50fyx0I="
 					},
-					"name": "UseCaseDiagram1",
+					"name": "UseCaseDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLActorView",
@@ -18950,7 +18950,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF/nDI5lFpu0z8="
 					},
-					"name": "ClassDiagram1",
+					"name": "ClassDiagram",
 					"ownedViews": [
 						{
 							"_type": "UMLClassView",
@@ -32891,8 +32891,8 @@
 												"$ref": "AAAAAAF/ylR8/3fXeAE="
 											},
 											"font": "Arial;13;0",
-											"left": 152.72998046875,
-											"top": 893,
+											"left": 136.72998046875,
+											"top": 669,
 											"width": 115.9052734375,
 											"height": 13,
 											"text": "SequenceDiagram1"
@@ -32904,16 +32904,16 @@
 												"$ref": "AAAAAAF/ylR8/3fXeAE="
 											},
 											"font": "Arial;13;1",
-											"left": 133,
-											"top": 893,
+											"left": 117,
+											"top": 669,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 128,
-									"top": 888,
+									"left": 112,
+									"top": 664,
 									"width": 569,
 									"height": 353,
 									"nameLabel": {
@@ -34104,7 +34104,7 @@
 												"$ref": "AAAAAAF/yuQN6AYOzqA="
 											},
 											"edgePosition": 1,
-											"text": "5 : course"
+											"text": "5 : courses"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -34206,9 +34206,9 @@
 												"$ref": "AAAAAAF/yut5rQnclOU="
 											},
 											"font": "Arial;13;0",
-											"left": 549,
+											"left": 546,
 											"top": 272,
-											"width": 57.08447265625,
+											"width": 63.58447265625,
 											"height": 13,
 											"alpha": 1.4056492710023296,
 											"distance": 6.082762530298219,
@@ -34216,7 +34216,7 @@
 												"$ref": "AAAAAAF/yut5rgndwy0="
 											},
 											"edgePosition": 1,
-											"text": "6 : course"
+											"text": "6 : courses"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -34318,9 +34318,9 @@
 												"$ref": "AAAAAAF/yuvcqAnyPys="
 											},
 											"font": "Arial;13;0",
-											"left": 378,
+											"left": 375,
 											"top": 292,
-											"width": 57.08447265625,
+											"width": 63.58447265625,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
@@ -34328,7 +34328,7 @@
 												"$ref": "AAAAAAF/yuvcqAnz+ds="
 											},
 											"edgePosition": 1,
-											"text": "7 : course"
+											"text": "7 : courses"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -34409,54 +34409,6 @@
 									"activation": {
 										"$ref": "AAAAAAF/yuvcqAn3hgA="
 									}
-								},
-								{
-									"_type": "UMLInteractionUseView",
-									"_id": "AAAAAAF/yu9DAAoZ70E=",
-									"_parent": {
-										"$ref": "AAAAAAF/ylR8/3fWYfc="
-									},
-									"model": {
-										"$ref": "AAAAAAF/yu9DAAoXZYY="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAF/yu9DAQoat4s=",
-											"_parent": {
-												"$ref": "AAAAAAF/yu9DAAoZ70E="
-											},
-											"font": "Arial;13;0",
-											"left": 353.1708984375,
-											"top": 437,
-											"width": 290.8291015625,
-											"height": 13
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAF/yu9DAQob6UE=",
-											"_parent": {
-												"$ref": "AAAAAAF/yu9DAAoZ70E="
-											},
-											"font": "Arial;13;1",
-											"left": 317,
-											"top": 437,
-											"width": 16.1708984375,
-											"height": 13,
-											"text": "ref"
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 312,
-									"top": 432,
-									"width": 337,
-									"height": 233,
-									"nameLabel": {
-										"$ref": "AAAAAAF/yu9DAQoat4s="
-									},
-									"frameTypeLabel": {
-										"$ref": "AAAAAAF/yu9DAQob6UE="
-									}
 								}
 							]
 						}
@@ -34527,7 +34479,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF/ylR8/3fV54w="
 							},
-							"name": "course",
+							"name": "courses",
 							"source": {
 								"$ref": "AAAAAAF/ytJW6eV+zS8="
 							},
@@ -34542,7 +34494,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF/ylR8/3fV54w="
 							},
-							"name": "course",
+							"name": "courses",
 							"source": {
 								"$ref": "AAAAAAF/ytL0aeWgiEw="
 							},
@@ -34557,7 +34509,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF/ylR8/3fV54w="
 							},
-							"name": "course",
+							"name": "courses",
 							"source": {
 								"$ref": "AAAAAAF/ytDequVC3Nw="
 							},
@@ -34639,16 +34591,6 @@
 								"$ref": "AAAAAAF/yulMwAZYmo0="
 							},
 							"isMultiInstance": false
-						}
-					],
-					"fragments": [
-						{
-							"_type": "UMLInteractionUse",
-							"_id": "AAAAAAF/yu9DAAoXZYY=",
-							"_parent": {
-								"$ref": "AAAAAAF/ylR8/3fV54w="
-							},
-							"name": "InteractionUse1"
 						}
 					]
 				}
