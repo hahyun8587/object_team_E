@@ -34594,7 +34594,7 @@
 													"font": "Arial;13;0",
 													"left": 648,
 													"top": 183,
-													"width": 209,
+													"width": 305,
 													"height": 43,
 													"guardLabel": {
 														"$ref": "AAAAAAF/ywd9ClVmMpU="
@@ -34604,14 +34604,14 @@
 											"font": "Arial;13;0",
 											"left": 648,
 											"top": 183,
-											"width": 209,
+											"width": 305,
 											"height": 43
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 648,
 									"top": 160,
-									"width": 209,
+									"width": 305,
 									"height": 249,
 									"nameLabel": {
 										"$ref": "AAAAAAF/ywd8/VVXeLY="
@@ -35536,7 +35536,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 103.9599609375,
-											"top": 149,
+											"top": 141,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "alt"
@@ -35549,7 +35549,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 77,
-											"top": 149,
+											"top": 141,
 											"width": 21.9599609375,
 											"height": 13,
 											"text": "seq"
@@ -35582,7 +35582,7 @@
 															},
 															"font": "Arial;13;0",
 															"left": 92,
-															"top": 182,
+															"top": 174,
 															"width": 49.14990234375,
 															"height": 13,
 															"text": "[logined]"
@@ -35590,7 +35590,7 @@
 													],
 													"font": "Arial;13;0",
 													"left": 72,
-													"top": 167,
+													"top": 159,
 													"width": 1177,
 													"height": 43,
 													"guardLabel": {
@@ -35600,16 +35600,16 @@
 											],
 											"font": "Arial;13;0",
 											"left": 72,
-											"top": 167,
+											"top": 159,
 											"width": 1177,
 											"height": 43
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 72,
-									"top": 144,
+									"top": 136,
 									"width": 1177,
-									"height": 881,
+									"height": 889,
 									"nameLabel": {
 										"$ref": "AAAAAAF/yylWh2xskqM="
 									},
@@ -35970,7 +35970,7 @@
 												"$ref": "AAAAAAF/y05q9B50bqI="
 											},
 											"font": "Arial;13;0",
-											"left": 135.9599609375,
+											"left": 103.9599609375,
 											"top": 85,
 											"width": 25.578125,
 											"height": 13,
@@ -35983,7 +35983,7 @@
 												"$ref": "AAAAAAF/y05q9B50bqI="
 											},
 											"font": "Arial;13;1",
-											"left": 109,
+											"left": 77,
 											"top": 85,
 											"width": 21.9599609375,
 											"height": 13,
@@ -36016,7 +36016,7 @@
 																"$ref": "AAAAAAF/y05rBx6DaRU="
 															},
 															"font": "Arial;13;0",
-															"left": 124,
+															"left": 92,
 															"top": 118,
 															"width": 72.58544921875,
 															"height": 13,
@@ -36024,7 +36024,7 @@
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 104,
+													"left": 72,
 													"top": 103,
 													"width": 1177,
 													"height": 370,
@@ -36034,14 +36034,14 @@
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 104,
+											"left": 72,
 											"top": 103,
 											"width": 1177,
 											"height": 370
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 104,
+									"left": 72,
 									"top": 80,
 									"width": 1177,
 									"height": 977,
@@ -37620,7 +37620,7 @@
 												"$ref": "AAAAAAF/y1k7iSCj6OA="
 											},
 											"font": "Arial;13;0",
-											"left": 39.9599609375,
+											"left": 63.9599609375,
 											"top": 93,
 											"width": 25.578125,
 											"height": 13,
@@ -37633,7 +37633,7 @@
 												"$ref": "AAAAAAF/y1k7iSCj6OA="
 											},
 											"font": "Arial;13;1",
-											"left": 13,
+											"left": 37,
 											"top": 93,
 											"width": 21.9599609375,
 											"height": 13,
@@ -37666,7 +37666,7 @@
 																"$ref": "AAAAAAF/y1k7pyCyCgY="
 															},
 															"font": "Arial;13;0",
-															"left": 28,
+															"left": 52,
 															"top": 126,
 															"width": 68.9736328125,
 															"height": 13,
@@ -37674,7 +37674,7 @@
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 8,
+													"left": 32,
 													"top": 111,
 													"width": 1185,
 													"height": 43,
@@ -37684,14 +37684,14 @@
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 8,
+											"left": 32,
 											"top": 111,
 											"width": 1185,
 											"height": 43
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 8,
+									"left": 32,
 									"top": 88,
 									"width": 1185,
 									"height": 1217,
@@ -37722,7 +37722,7 @@
 												"$ref": "AAAAAAF/y1zPACFI684="
 											},
 											"font": "Arial;13;0",
-											"left": 39.9599609375,
+											"left": 63.9599609375,
 											"top": 205,
 											"width": 14.72998046875,
 											"height": 13,
@@ -37735,7 +37735,7 @@
 												"$ref": "AAAAAAF/y1zPACFI684="
 											},
 											"font": "Arial;13;1",
-											"left": 13,
+											"left": 37,
 											"top": 205,
 											"width": 21.9599609375,
 											"height": 13,
@@ -37768,7 +37768,7 @@
 																"$ref": "AAAAAAF/y1zPEiFXVf8="
 															},
 															"font": "Arial;13;0",
-															"left": 28,
+															"left": 52,
 															"top": 238,
 															"width": 49.14990234375,
 															"height": 13,
@@ -37776,7 +37776,7 @@
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 8,
+													"left": 32,
 													"top": 223,
 													"width": 1185,
 													"height": 43,
@@ -37786,14 +37786,14 @@
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 8,
+											"left": 32,
 											"top": 223,
 											"width": 1185,
 											"height": 43
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 8,
+									"left": 32,
 									"top": 200,
 									"width": 1185,
 									"height": 1065,
@@ -39262,9 +39262,9 @@
 												"$ref": "AAAAAAF/y2twbSMmMYQ="
 											},
 											"font": "Arial;13;0",
-											"left": 356,
+											"left": 355,
 											"top": 851,
-											"width": 168.11767578125,
+											"width": 171.35498046875,
 											"height": 13,
 											"alpha": 1.5824227083993812,
 											"distance": 86.00581375697809,
@@ -39712,7 +39712,7 @@
 												"$ref": "AAAAAAF/y2pYpSMLVj8="
 											},
 											"edgePosition": 1,
-											"text": "13 : deregisterCourse(indx, student)"
+											"text": "13 : deregister(indx, student)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -39813,9 +39813,9 @@
 												"$ref": "AAAAAAF/y3vnGSU6HbQ="
 											},
 											"font": "Arial;13;0",
-											"left": 578,
+											"left": 556,
 											"top": 981,
-											"width": 137.66162109375,
+											"width": 180.64794921875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
@@ -39823,7 +39823,7 @@
 												"$ref": "AAAAAAF/y3vnGSU7IPc="
 											},
 											"edgePosition": 1,
-											"text": "14 : deregister(student)"
+											"text": "14 : deregister(course, student)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -40309,7 +40309,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF/y1VHsR8y+/0="
 							},
-							"name": "deregisterCourse",
+							"name": "deregister",
 							"source": {
 								"$ref": "AAAAAAF/y1a3Fh/nH40="
 							},
@@ -40331,7 +40331,7 @@
 							"target": {
 								"$ref": "AAAAAAF/y3tVoSUUSJ4="
 							},
-							"arguments": "student"
+							"arguments": "course, student"
 						},
 						{
 							"_type": "UMLMessage",
