@@ -1,4 +1,4 @@
-package com.project2;
+package com.std;
 
 public class Employee {
     private String role;

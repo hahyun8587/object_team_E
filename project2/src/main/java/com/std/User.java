@@ -1,9 +1,9 @@
-package com.project2;
+package com.std;
 
-import Employee;
+import com.std.Employee;
 
 public class User {
-    private String ID;
+    private String id;
     private String pw;
     private String name;
     private int privilege;
@@ -13,7 +13,7 @@ public class User {
         /*implement*/
     }
 
-    public Employee login() {
+    public Employee login(String id, String pw) {
         /*implement*/
     }
 
