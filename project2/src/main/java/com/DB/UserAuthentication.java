@@ -8,4 +8,6 @@ public class UserAuthentication {
         this.ids = ids;
         this.pws = pws;
     }
+
+    
 }

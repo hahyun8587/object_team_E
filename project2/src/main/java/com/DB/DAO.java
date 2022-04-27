@@ -3,27 +3,15 @@ package com.DB;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Array;
 import java.sql.SQLException;
-import com.DB.UserAuthentication;
 
 public class DAO {
     private static DAO dao = null;
-    private LoadMethod
+    private Loader loader;
     private Connection conn;
     private PreparedStatement pstmt;
-    private String driver;
-    private String url;
-    private String id;
-    private String pw;
 
-    private DAO(String _driver, String _url, String _id, String _pw) {
-        driver = _driver;
-        url = _url;
-        id = _id;
-        pw = _pw;
-        
+    private DAO(String driver, String url, String id, String pw) {
         try {
             Class.forName(driver);
 
@@ -44,12 +32,12 @@ public class DAO {
     }
 
     public Object loadData(String sql) {
-        try {
-            ResultSet rs = pstmt.executeQuery(sql);
-            
         
     }
-    
+
+    public void setLoader(Loader loader) {
+        this.loader = loader;
+    }
 }
 
 
