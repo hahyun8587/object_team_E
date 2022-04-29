@@ -1,7 +1,5 @@
 package com.std;
 
-import com.std.Employee;
-
 public class User {
     private String id;
     private String pw;

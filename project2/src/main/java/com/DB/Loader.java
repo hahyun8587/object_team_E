@@ -7,21 +7,24 @@ import java.util.ArrayList;
 import java.util.regex.PatternSyntaxException;
 
 /**
- * Abstract class that applies template design pattern.
+ * Abstract class that loads specific object from database.
+ * This class is applied template design pattern.
  */
 public abstract class Loader {  
     /**
-     * Template method that loads specific Object from database.
+     * Template method that loads specific object from database.
      * 
-     * @param pstmt the PreparedStatement instance that linked with database
+     * @param pstmt the <code>PreparedStatement</code> object that linked with database
      * @param sql a sql query that executed
-     * @param arg an argument that passed to initObj() 
-     * @return the specific object
+     * @param arg an argument that passed for initializing specific object, <code>null</code> if don't need 
+     * @throws SQLException 
+     * @throws PatternSyntaxException
+     * @return specific object
      */
-    public Object load(PreparedStatement pstmt, String sql, Object arg) throws SQLException, PatternSyntaxException{
+    public Object load(PreparedStatement pstmt, String sql, Object arg) throws SQLException, PatternSyntaxException {
+        ArrayList<Object>[] arr;
         ResultSet rs = null;
         Object obj = null;
-        ArrayList<Object>[] arr;
 
         arr = new ArrayList[numCol(sql)];
 
@@ -54,9 +57,10 @@ public abstract class Loader {
      * Returns the number of columns of the table that query returns.
      * 
      * @param sql the sql qeury that executed
+     * @throws PatternSyntaxException
      * @return the number of columns of the table that the query returns 
      */
-    private int numCol(String sql) throws PatternSyntaxException{
+    private int numCol(String sql) throws PatternSyntaxException {
         String[] strs;
         int i;
         int count = 0;
