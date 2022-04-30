@@ -13,7 +13,7 @@ public class UserLoader extends Loader {
         ((User) arg).setId((String) arr[0].get(0));
         ((User) arg).setPw((String) arr[1].get(0));
         
-
+        
 
 
     }
