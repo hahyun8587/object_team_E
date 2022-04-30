@@ -20,7 +20,6 @@ public class DisplayUserManager extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());
 		
-		JPanel tablePanel = new JPanel();
 		DefaultTableModel tableModel = new DefaultTableModel(column,0);
 		
 		manageuser = new JTable(tableModel);
