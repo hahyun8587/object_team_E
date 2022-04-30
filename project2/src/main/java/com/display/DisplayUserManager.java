@@ -10,11 +10,14 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DisplayUserManager extends JFrame implements MouseListener{
+public class DisplayUserManager extends JFrame{
 	private final String[] column = {"직번","이름","소속","직급"};
 	
 	private JScrollPane scrolledTable;
 	private JTable manageuser;
+	private JPanel buttonPanel;
+	private JButton usergroupbutton;
+	private JButton creatememberbutton;
 	
 	public DisplayUserManager(){
 		setTitle("User Manager");
@@ -30,31 +33,27 @@ public class DisplayUserManager extends JFrame implements MouseListener{
 		scrolledTable = new JScrollPane(manageuser);
 		this.add(scrolledTable);
 		
-		JPanel buttonPanel = new JPanel(new GridLayout(2,1));
+		buttonPanel = new JPanel(new GridLayout(2,1));
 		
-		JButton usergroupbutton = new JButton("사용자 그룹");
-		JButton creatememberbutton = new JButton("멤버생성");
+		usergroupbutton = new JButton("사용자 그룹");
+		creatememberbutton = new JButton("멤버생성");
 		buttonPanel.add(usergroupbutton);
 		buttonPanel.add(creatememberbutton);
 		this.add(buttonPanel);
 		
-		usergroupbutton.addMouseListener(this);
-		creatememberbutton.addMouseListener(this);
-		manageuser.addMouseListener(this);
+		usergroupbutton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				usergroupbutton.setBackground(Color.CYAN);
+			}
+		});
+		creatememberbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				creatememberbutton.setBackground(Color.CYAN);
+			}
+		});
 		
 		setVisible(true);
 	}
-	
-	@Override
-	public void mousePressed(MouseEvent e) {}
-	@Override
-	public void mouseReleased(MouseEvent e) {}
-	@Override
-	public void mouseEntered(MouseEvent e) {}
-	@Override
-	public void mouseExited(MouseEvent e) {}
-	@Override
-	public void mouseClicked(MouseEvent e) {}
 	
 	public static void main(String[] args) {
 		new DisplayUserManager();
