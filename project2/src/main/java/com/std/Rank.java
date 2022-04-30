@@ -1,6 +1,8 @@
 package com.std;
 
-public class Employee {
+import com.util.RecordManager;
+
+public class Rank {
     private String role;
     private RecordManager rm;
 
@@ -11,5 +13,4 @@ public class Employee {
     public void viewRecord() {
         /*implement*/
     }
-    
 }

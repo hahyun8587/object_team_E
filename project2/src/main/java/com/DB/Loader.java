@@ -33,11 +33,10 @@ public abstract class Loader {
 
         rs = pstmt.executeQuery(sql);
            
-        do {
+        while(rs.next()) {
             for(int i = 0; i < arr.length; i++)
                 arr[i].add(rs.getObject(i));
-        } while(rs.next()); 
-    
+        }
         rs.close();
       
         obj = initObj(arr, arg);
@@ -52,7 +51,7 @@ public abstract class Loader {
      * @return the specific object
      */
     protected abstract Object initObj(ArrayList<Object>[] arr, Object arg);   
-
+    
     /**
      * Returns the number of columns of the table that query returns.
      * 

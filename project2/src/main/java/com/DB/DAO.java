@@ -5,12 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.regex.PatternSyntaxException;
+import java.lang.NullPointerException;
 
 /**
  * Data Access Object class that access mysql database.
  * This class is applied singleton design pattern.
  */
-
 public class DAO {
     private static DAO dao = null;
     private Loader loader;
@@ -19,7 +19,7 @@ public class DAO {
     private PreparedStatement pstmt;
 
     /**
-     * Constructs a <code>DAO</code> with given <code>driver</code>, <code>url</code>, <code>id</code>, <code>pw</code>.
+     * Constructs a <code>DAO</code> object with given <code>driver</code>, <code>url</code>, <code>id</code>, <code>pw</code>.
      * @param driver a database driver 
      * @param url a database url
      * @param id an id for database access
@@ -58,9 +58,9 @@ public class DAO {
      * @return specific object
      * @throws SQLException
      * @throws PatternSyntaxException
+     * @throws NullPointerException
      */
-    public Object loadData(String sql, Object arg) throws SQLException, PatternSyntaxException {
-
+    public Object loadData(String sql, Object arg) throws SQLException, PatternSyntaxException, NullPointerException {
         return loader.load(pstmt, sql, arg);
     }
 
@@ -68,13 +68,17 @@ public class DAO {
         /*implement*/
     }
 
-    public void close() throws SQLException{
+    /**
+     * Closes all objects used for accessing database.
+     * @throws SQLException
+     */
+    public void close() throws SQLException {
         conn.close();
         pstmt.close();
     }
 
     /**
-     * Sets loader that loadss specific object from database.
+     * Sets loader that loads specific object from database.
      * @param loader
      */
     public void setLoader(Loader loader) {
