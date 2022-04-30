@@ -43,7 +43,7 @@ public class DisplayUserManager extends JFrame{
 		
 		usergroupbutton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				usergroupbutton.setBackground(Color.CYAN);
+				new UserGroupDisplay();
 			}
 		});
 		creatememberbutton.addActionListener(new ActionListener() {
