@@ -48,7 +48,7 @@ public class DisplayUserManager extends JFrame{
 		});
 		creatememberbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				creatememberbutton.setBackground(Color.CYAN);
+				new CreateMemberDisplay();
 			}
 		});
 		
