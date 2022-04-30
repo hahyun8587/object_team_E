@@ -3,13 +3,12 @@ package com.std;
 import com.util.UserAuthentication;
 
 /**
- * Class that represents an user.
+ * Class that represents user.
  */
 public class User {
     private String id;
     private String pw;
     private String name;
-    private int privilege;
     private Rank rank;
 
     public void signUp() {
@@ -46,14 +45,6 @@ public class User {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * Sets privilege of user.
-     * @param privilege privilege of user
-     */
-    public void setPrivilege(int privilege) {
-        this.privilege = privilege;
     }
 
     /**

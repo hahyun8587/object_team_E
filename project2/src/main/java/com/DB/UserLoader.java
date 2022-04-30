@@ -2,6 +2,7 @@ package com.DB;
 
 import java.util.ArrayList;
 import com.std.User;
+import com.std.*;
 
 /**
  * Class that loads <code>User</code> object.
@@ -9,12 +10,11 @@ import com.std.User;
  */
 public class UserLoader extends Loader {
     @Override
-    protected Object initObject(ArrayList<Object>[] arr, Object arg) {
+    protected Object initObj(ArrayList<Object>[] arr, Object arg) {
         ((User) arg).setId((String) arr[0].get(0));
         ((User) arg).setPw((String) arr[1].get(0));
-        ((User) arg).
+        ((User) arg).setName((String) arr[2].get(0));
 
-
-
+        return arg;
     }
 }
