@@ -46,7 +46,7 @@ public abstract class Loader {
 
     /**
      * Primitive method that initialize specific object.
-     * @param rs
+     * @param arr array of array of data that loaded from database
      * @param arg an argument that used for initializing specific object
      * @return the specific object
      */
@@ -54,8 +54,7 @@ public abstract class Loader {
     
     /**
      * Returns the number of columns of the table that query returns.
-     * 
-     * @param sql the sql qeury that executed
+     * @param sql a  sql qeury to execute
      * @throws PatternSyntaxException
      * @return the number of columns of the table that the query returns 
      */

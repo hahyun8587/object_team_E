@@ -54,7 +54,8 @@ public class DAO {
 
     /**
      * Loads specific object from database by using <code>Loader</code>.
-     * @param sql
+     * @param sql a sql query to execute
+     * @param arg an object that used for initializing specific object
      * @return specific object
      * @throws SQLException
      * @throws PatternSyntaxException
