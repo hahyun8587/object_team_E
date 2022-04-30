@@ -11,6 +11,9 @@ public class FullTime extends Rank {
     public void reserveAlarm() {
         /*implement*/
     }
-    
+
+    public void setRecordManager(RecordManager rm) {
+        /*implement*/
+    }
 
 }
