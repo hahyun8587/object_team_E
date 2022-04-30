@@ -1,5 +1,7 @@
 package com.display;
 
+// Çã½Âµ· ±¸Çö
+
 import java.awt.GridLayout;
 
 import javax.swing.*;

@@ -1,5 +1,7 @@
 package com.display;
 
+//Çã½Âµ· ±¸Çö
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

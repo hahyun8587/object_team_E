@@ -1,5 +1,7 @@
 package com.display;
 
+// Çã½Âµ· ±¸Çö
+
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
