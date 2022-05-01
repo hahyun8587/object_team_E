@@ -9,14 +9,34 @@ public class User {
     private String id;
     private String pw;
     private String name;
-    private Rank rank;
+    public Rank rank; 
+
+    /**
+     * Constructs <code>User</code> object with <code>id</code>, <code>pw</code>, <code>name</code>.
+     * @param id id of user
+     * @param pw password of user
+     * @param name name of user
+     */
+    public User(String id, String pw, String name) {
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+    }
 
     public void signUp() {
         /*implement*/
     }
 
-    public void login() {
-        /*implement*/
+    /**
+     * Gives <code>User</code> object by using id and password.
+     * Gives <code>null</code> if login fails.
+     * @param ua <code>UserAuthentication</code> object
+     * @param id id of user
+     * @param pw password of user
+     * @return <code>User</code> object if id and password is correct, otherwise, <code>null</code>
+     */
+    public static User login(UserAuthentication ua, String id, String pw) {
+        return ua.authenticate(id, pw);
     }
 
     public void logout() {
@@ -53,5 +73,21 @@ public class User {
      */
     public void setRank(Rank rank) {
         this.rank = rank;
+    }
+    
+    /**
+     * Gets id of user.
+     * @return id of user
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Gets password of user.
+     * @return password of user
+     */
+    public String getPw() {
+        return pw;
     }
 }

@@ -11,17 +11,17 @@ import java.util.regex.PatternSyntaxException;
  * This class is applied template design pattern.
  */
 public abstract class Loader {  
+
     /**
      * Template method that loads specific object from database.
      * 
      * @param pstmt the <code>PreparedStatement</code> object that linked with database
-     * @param sql a sql query that executed
-     * @param arg an argument that passed for initializing specific object, <code>null</code> if don't need 
+     * @param sql a sql query to execute
      * @throws SQLException 
      * @throws PatternSyntaxException
      * @return specific object
      */
-    public Object load(PreparedStatement pstmt, String sql, Object arg) throws SQLException, PatternSyntaxException {
+    public Object load(PreparedStatement pstmt, String sql) throws SQLException, PatternSyntaxException {
         ArrayList<Object>[] arr;
         ResultSet rs = null;
         Object obj = null;
@@ -39,22 +39,21 @@ public abstract class Loader {
         }
         rs.close();
       
-        obj = initObj(arr, arg);
+        obj = initObj(arr);
 
         return obj;
     }
 
     /**
-     * Primitive method that initialize specific object.
-     * @param arr array of array of data that loaded from database
-     * @param arg an argument that used for initializing specific object
-     * @return the specific object
+     * Primitive method that initializes specific object.
+     * @param arr array of arraylist of data that loaded from database
+     * @return specific object
      */
-    protected abstract Object initObj(ArrayList<Object>[] arr, Object arg);   
+    protected abstract Object initObj(ArrayList<Object>[] arr);   
     
     /**
      * Returns the number of columns of the table that query returns.
-     * @param sql a  sql qeury to execute
+     * @param sql a sql qeury to execute
      * @throws PatternSyntaxException
      * @return the number of columns of the table that the query returns 
      */
@@ -63,11 +62,11 @@ public abstract class Loader {
         int i;
         int count = 0;
 
-        strs = sql.replaceAll(",", " ").split(" ");
+        strs = sql.toLowerCase().replaceAll(",", " ").split(" ");
 
-        for(i = 0; !strs[i].toLowerCase().equals("select"); i++);
+        for(i = 0; !strs[i].equals("select"); i++);
         
-        for(i = i + 1; !strs[i].toLowerCase().equals("from"); i++) {
+        for(i = i + 1; !strs[i].equals("from"); i++) {
             if(!strs[i].equals("as")) 
                 count++;
             else 

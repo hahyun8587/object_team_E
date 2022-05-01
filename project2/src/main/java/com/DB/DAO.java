@@ -44,7 +44,6 @@ public class DAO {
      * @throws ClassNotFoundException
      * @throws SQLException
      */
-
     public static synchronized DAO getDAO(String driver, String url, String id, String pw) throws ClassNotFoundException, SQLException {   
         if(dao == null)
            dao = new DAO(driver, url, id, pw);
@@ -55,14 +54,14 @@ public class DAO {
     /**
      * Loads specific object from database by using <code>Loader</code>.
      * @param sql a sql query to execute
-     * @param arg an object that used for initializing specific object
+     * @param arg an argument that used for initializing specific object
      * @return specific object
      * @throws SQLException
      * @throws PatternSyntaxException
      * @throws NullPointerException
      */
-    public Object loadData(String sql, Object arg) throws SQLException, PatternSyntaxException, NullPointerException {
-        return loader.load(pstmt, sql, arg);
+    public Object loadData(String sql) throws SQLException, PatternSyntaxException, NullPointerException {
+        return loader.load(pstmt, sql);
     }
 
     public void saveData() {
