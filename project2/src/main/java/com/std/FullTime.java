@@ -4,7 +4,7 @@ import com.util.RecordManager;
 
 public abstract class FullTime extends Rank {
     private String department;
-    private UIDisplayer displayer;
+    //private UIDisplayer displayer;
 
     public FullTime(String role, String department) {
         super(role);
