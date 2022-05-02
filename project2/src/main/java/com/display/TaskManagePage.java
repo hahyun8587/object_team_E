@@ -1,21 +1,20 @@
 package com.display;
 
-//Çã½Âµ· ±¸Çö
+//ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 
-public class DisplayTaskManager extends JFrame{
+public class TaskManagePage extends JFrame implements Displayable{
 	private JTable taskTable;
-	private final String[] column = {"ÇÁ·ÎÁ§Æ®¸í","½ÃÀÛÀÏ","¸¶°¨ ¿¡Á¤ÀÏ"};
+	private final String[] column = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"};
 	private JButton completeBtn, addtaskBtn;
 	private JScrollPane taskScroll;
 	private JPanel BtnPnl;
 	
-	
-	public DisplayTaskManager() {
+	public TaskManagePage() {
 		setTitle("Task Manager");
 		setSize(1200,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,16 +28,14 @@ public class DisplayTaskManager extends JFrame{
 		this.add("Center",taskScroll);
 		
 		BtnPnl = new JPanel(new FlowLayout());
-		completeBtn = new JButton("ÀÛ¾÷Ã¼Å©");
+		completeBtn = new JButton("ï¿½Û¾ï¿½Ã¼Å©");
 		BtnPnl.add(completeBtn);
-		addtaskBtn = new JButton("ÀÛ¾÷»ý¼º");
+		addtaskBtn = new JButton("ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½");
 		BtnPnl.add(addtaskBtn);
 		this.add("South",BtnPnl);
-		
-		setVisible(true);
 	}
-	
-	public static void main(String[] arg) {
-		new DisplayTaskManager();
+
+	public void display() {
+		setVisible(true);
 	}
 }

@@ -1,13 +1,13 @@
 package com.display;
 
-//Çã½Âµ· ±¸Çö
+//ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CreateMemberDisplay extends JFrame{
-	private final String[] labels= {"ÀÌ¸§","¼Ò¼Ó","Á÷±Þ"};
+public class CreateMemberDisplay extends JFrame implements Displayable {
+	private final String[] labels= {"test"," test1","test2  "};
 	private JTextField []field = new JTextField[3];
 	private JButton confirmBtn;
 	private JButton cancelBtn;
@@ -16,24 +16,25 @@ public class CreateMemberDisplay extends JFrame{
 	{
 		setTitle("Add Member Manager");
 		setSize(300,400);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new BorderLayout());
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	
+		setLayout(new BorderLayout());
 		textPnl = new JPanel(new GridLayout(3,2));
 		for(int i=0;i<3;i++) {
 			textPnl.add(new JLabel(labels[i]));
 			field[i] = new JTextField(30);
 			textPnl.add(field[i]);
 		}
-		this.add("Center",textPnl);
+		add("Center",textPnl);
 		
 		btnPnl = new JPanel(new FlowLayout());
-		confirmBtn = new JButton("Ãß°¡");
-		cancelBtn = new JButton("Ãë¼Ò");
+		confirmBtn = new JButton("confirm");
+		cancelBtn = new JButton("cancel");
 		btnPnl.add(confirmBtn);
 		btnPnl.add(cancelBtn);
-		this.add("South",btnPnl);
-		
-		
+		add("South",btnPnl);
+	}
+
+	public void display() {
 		setVisible(true);
 	}
 }

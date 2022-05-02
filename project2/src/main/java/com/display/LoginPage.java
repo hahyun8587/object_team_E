@@ -1,40 +1,23 @@
 package com.display;
-import java.awt.*;
+
 import java.awt.event.*;
 import javax.swing.*;
 
-public class login extends JFrame {
-	
-	//show dp;
+public class LoginPage extends JFrame implements Displayable {
 	private JPanel loginPanel = new JPanel();
-	private JLabel idLabel = new JLabel("아이디 ");
+	private JLabel idLabel = new JLabel("아이디");
 	private JLabel pwLabel = new JLabel("비밀번호 ");
 	private JTextField idText = new JTextField();
 	private JPasswordField pwText = new JPasswordField();
 	private JButton loginBtn = new JButton("로그인");
 	private JButton idpwSearchBtn = new JButton("아이디/비밀번호 찾기");
-	
 
-	private String[] data;
+	private String[] data = null;
 
-	public login() {
-
+	public LoginPage() {
 		super("로그인 창");
-		
-		/* 
-		idpwSearchBtn.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "아이디 비번 찾기 기능~~", "아이디/비밀번호 찾기", JOptionPane.DEFAULT_OPTION);
-			}
-		});
-		*/
-
-	}
-
-	public void show() {
 		loginPanel.setLayout(null);
-		this.setContentPane(loginPanel);
+		setContentPane(loginPanel);
 		
 		idLabel.setBounds(10, 10, 100, 25);
 		pwLabel.setBounds(10, 40, 100, 25);
@@ -55,20 +38,19 @@ public class login extends JFrame {
 
 		setSize(350, 150);
 
-		this.setLocationRelativeTo(null);
-		this.setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		setLocationRelativeTo(null);
+		//this.setVisible(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	
 		loginBtn.addActionListener(new ActionListener() {
 
-			public void actionPerformed(ActionEvent e) {
-				String[] data = new String[2];
+			public void actionPerformed(ActionEvent e) {	
+				data = new String[2];
+				data[0] = idText.getText();
+				data[1] = new String(pwText.getPassword()).trim();
 				
-				data[0] = idText.getText().trim();
-				data[1] = pwText.getText().trim();
-
-				setData(data);
-
+				setVisible(false);
+				new MainPage().display();
 				/*
 				if (id.length() == 0 || pw.length() == 0) {
 					JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호를 입력 하셔야 됩니다.", "아이디나 비번을 입력!",
@@ -88,6 +70,20 @@ public class login extends JFrame {
 				//JOptionPane.showMessageDialog(null, "로그인 실패", "로그인 확인!", JOptionPane.DEFAULT_OPTION);
 			}
 		});
+
+
+		/* 
+		idpwSearchBtn.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "아이디 비번 찾기 기능~~", "아이디/비밀번호 찾기", JOptionPane.DEFAULT_OPTION);
+			}
+		});
+		*/
+	}
+
+	public void display() {
+		setVisible(true);
 	}
 
 	public void setData(String[] data) {
@@ -97,4 +93,5 @@ public class login extends JFrame {
 	public String[] getData() {
 		return data;
 	}
+
 }

@@ -1,6 +1,6 @@
 package com.display;
 
-// Çã½Âµ· ±¸Çö
+// ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½
 
 import javax.swing.JFrame;
 import javax.swing.JTable;
@@ -12,8 +12,8 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DisplayUserManager extends JFrame{
-	private final String[] column = {"Á÷¹ø","ÀÌ¸§","¼Ò¼Ó","Á÷±Þ"};
+public class UserManagePage extends JFrame implements Displayable{
+	private final String[] column = {"tset","test","test","test"};
 	
 	private JScrollPane scrolledTable;
 	private JTable manageuser;
@@ -21,7 +21,7 @@ public class DisplayUserManager extends JFrame{
 	private JButton usergroupbutton;
 	private JButton creatememberbutton;
 	
-	public DisplayUserManager(){
+	public UserManagePage(){
 		setTitle("User Manager");
 		setSize(1200,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,23 +37,25 @@ public class DisplayUserManager extends JFrame{
 		
 		buttonPanel = new JPanel(new GridLayout(2,1));
 		
-		usergroupbutton = new JButton("»ç¿ëÀÚ ±×·ì");
-		creatememberbutton = new JButton("¸â¹ö»ý¼º");
+		usergroupbutton = new JButton("user group");
+		creatememberbutton = new JButton("add member");
 		buttonPanel.add(usergroupbutton);
 		buttonPanel.add(creatememberbutton);
 		this.add(buttonPanel);
 		
 		usergroupbutton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				new UserGroupDisplay();
+				new UserGroupDisplay().display();
 			}
 		});
 		creatememberbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new CreateMemberDisplay();
+				new CreateMemberDisplay().display();
 			}
 		});
-		
+	}
+	
+	public void display() {
 		setVisible(true);
 	}
 }

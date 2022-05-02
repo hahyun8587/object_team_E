@@ -5,7 +5,7 @@ package com.util;
  */
 public class GlobalVariables {
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost/oodp?serverTimezone=UTC";
+    public static final String URL = "jdbc:mysql://localhost/oodp?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     public static final String ID = "root";
     public static final String PASSWORD = "zld92499";
     public static final String USER_QUERY = "";
