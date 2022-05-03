@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.regex.PatternSyntaxException;
+
+import com.util.GlobalVariables;
+
 import java.lang.NullPointerException;
 
 /**
@@ -31,7 +34,7 @@ public class DAO {
         Class.forName(driver);
 
         conn = DriverManager.getConnection(url, id, pw);
-        pstmt = conn.prepareStatement(null);
+        pstmt = conn.prepareStatement(GlobalVariables.USERLIST_QUERY);
     }      
 
     /**
@@ -60,7 +63,7 @@ public class DAO {
      * @throws PatternSyntaxException
      * @throws NullPointerException
      */
-    public Object loadData(String sql) throws SQLException, PatternSyntaxException, NullPointerException {
+    public Object loadInstance(String sql) throws SQLException, PatternSyntaxException, NullPointerException {
         return loader.load(pstmt, sql);
     }
 

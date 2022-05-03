@@ -35,7 +35,7 @@ public abstract class Loader {
            
         while(rs.next()) {
             for(int i = 0; i < arr.length; i++)
-                arr[i].add(rs.getObject(i));
+                arr[i].add(rs.getObject(i + 1));
         }
         rs.close();
       
@@ -67,10 +67,11 @@ public abstract class Loader {
         for(i = 0; !strs[i].equals("select"); i++);
         
         for(i = i + 1; !strs[i].equals("from"); i++) {
-            if(!strs[i].equals("as")) 
-                count++;
-            else 
+
+            if(strs[i].equals("as"))
                 i++;
+            else if(!strs[i].equals("as") && !strs[i].isBlank()) 
+                count++;
         }
         return count;
     }

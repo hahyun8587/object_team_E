@@ -14,7 +14,7 @@ public class TeamLeaderLoader extends Loader {
             
             dao.setLoader(new UserListLoader());
             
-            return new TeamLeader((String) arr[0].get(0), (String) arr[1].get(0), (ArrayList<User>) dao.loadData(GlobalVariables.USERLIST_QUERY)); 
+            return new TeamLeader((String) arr[0].get(0), (String) arr[1].get(0), (ArrayList<User>) dao.loadInstance(GlobalVariables.USERLIST_QUERY)); 
         } catch(ClassCastException e) {
             e.printStackTrace();
         } catch(PatternSyntaxException e) {
