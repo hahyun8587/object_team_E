@@ -35,4 +35,12 @@ public class UserAuthentication {
         }
         return null;
     }
+
+    /**
+     * Gets arraylist of user
+     * @return arraylist of user
+     */
+    public ArrayList<User> getUsers() {
+        return users;
+    }
 }

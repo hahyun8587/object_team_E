@@ -27,17 +27,15 @@ public class MainPage extends JFrame implements Displayable {
 
 		jobManagementBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				new TaskManagePage().display();
-				setVisible(true);
+				dispose();
+				new JobManagePage().display();
 			}
 
 		});
 		memberManagementBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				new UserManagePage().display();
-				setVisible(true);
+				dispose();
+				new MemberManagePage().display();
 			}
 		});
 	}

@@ -40,38 +40,18 @@ public class LoginPage extends JFrame implements Displayable {
 
 		setLocationRelativeTo(null);
 		//this.setVisible(true);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 		loginBtn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {	
 				data = new String[2];
 				data[0] = idText.getText();
-				data[1] = new String(pwText.getPassword()).trim();
+				data[1] = new String(pwText.getPassword());
 				
-				setVisible(false);
-				new MainPage().display();
-				/*
-				if (id.length() == 0 || pw.length() == 0) {
-					JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호를 입력 하셔야 됩니다.", "아이디나 비번을 입력!",
-							JOptionPane.DEFAULT_OPTION);
-					return null;
-				}
-			
-			
-				if (id.equals("test") && pw.equals("test1")) {
-					JOptionPane.showMessageDialog(null, "로그인 성공", "로그인 확인!", JOptionPane.DEFAULT_OPTION);
-					//dp.gomain();
-					//여기서 다른 화면으로 이동하도록 구현
-					return;
-				}
-				*/
-	
-				//JOptionPane.showMessageDialog(null, "로그인 실패", "로그인 확인!", JOptionPane.DEFAULT_OPTION);
+				dispose();
 			}
 		});
-
-
 		/* 
 		idpwSearchBtn.addActionListener(new ActionListener() {
 
@@ -93,5 +73,4 @@ public class LoginPage extends JFrame implements Displayable {
 	public String[] getData() {
 		return data;
 	}
-
 }

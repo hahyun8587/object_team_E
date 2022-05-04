@@ -1,6 +1,6 @@
 package com.std;
 
-import com.util.RecordManager;
+import com.record.RecordManager;
 
 public abstract class FullTime extends Rank {
     private String department;

@@ -16,7 +16,7 @@ public class Main {
             UserAuthentication ua;
             User user;
             UIDisplayer ud;
-            LoginPage l;
+            LoginPage lp;
             String[] data;
 
             dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL,GlobalVariables.ID, GlobalVariables.PASSWORD);
@@ -25,18 +25,27 @@ public class Main {
             
             ua = (UserAuthentication) dao.loadInstance(GlobalVariables.USERLIST_QUERY);
             ud = new UIDisplayer();
-            ud.setPage(l = new LoginPage());
+            ud.setPage(lp = new LoginPage());
+        
+            do {
+                ud.displayPage();
+
+                while((data = lp.getData()) == null)
+                    System.out.print("");
+                
+                try {
+                    Thread.sleep(1000);
+                } catch(InterruptedException e) {
+                    e.printStackTrace();
+                }    
+            } while((user = ua.authenticate(data[0], data[1])) == null);
+
+            System.out.println("login succes");
+
+            ud.setPage(new MainPage());
             ud.displayPage();
 
-            while((data = l.getData()) == null)
-                
-            Thread.sleep(1000);    
-            
-            if((user = ua.authenticate(data[0], data[1])) != null)
-                System.out.println("Login Success");
-            else 
-                System.out.println("Login fail");
-            
+            dao.close();
         } catch(SQLException e) {
             e.printStackTrace();
         } catch(PatternSyntaxException e) {
@@ -44,8 +53,6 @@ public class Main {
         } catch(ClassNotFoundException e) {
             e.printStackTrace();
         } catch(NullPointerException e) {
-            e.printStackTrace();
-        } catch(InterruptedException e) {
             e.printStackTrace();
         }       
     }

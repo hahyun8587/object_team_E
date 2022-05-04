@@ -3,12 +3,10 @@ package com.DB;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.regex.PatternSyntaxException;
-
 import com.util.GlobalVariables;
 
-import java.lang.NullPointerException;
+import java.sql.SQLException;
+import java.util.regex.PatternSyntaxException;
 
 /**
  * Data Access Object class that access mysql database.
@@ -88,6 +86,3 @@ public class DAO {
         this.loader = loader;
     }
 }
-
-
-

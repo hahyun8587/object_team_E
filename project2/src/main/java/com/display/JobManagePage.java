@@ -7,14 +7,14 @@ import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 
-public class TaskManagePage extends JFrame implements Displayable{
+public class JobManagePage extends JFrame implements Displayable{
 	private JTable taskTable;
 	private final String[] column = {"������Ʈ��","������","���� ������"};
 	private JButton completeBtn, addtaskBtn;
 	private JScrollPane taskScroll;
 	private JPanel BtnPnl;
 	
-	public TaskManagePage() {
+	public JobManagePage() {
 		setTitle("Task Manager");
 		setSize(1200,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -4,7 +4,7 @@ package com.display;
  * Class that displays a page.
  */
 public class UIDisplayer {
-    Displayable page;
+    private Displayable page;
 
     public void displayPage() {
         page.display();

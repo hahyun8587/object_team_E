@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.*;
 
-public class UserManagePage extends JFrame implements Displayable{
+public class MemberManagePage extends JFrame implements Displayable{
 	private final String[] column = {"tset","test","test","test"};
 	
 	private JScrollPane scrolledTable;
@@ -21,7 +21,7 @@ public class UserManagePage extends JFrame implements Displayable{
 	private JButton usergroupbutton;
 	private JButton creatememberbutton;
 	
-	public UserManagePage(){
+	public MemberManagePage(){
 		setTitle("User Manager");
 		setSize(1200,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
