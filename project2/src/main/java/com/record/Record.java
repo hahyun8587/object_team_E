@@ -17,8 +17,12 @@ public class Record {
         this.name = name;
     }
 
-    public void add() {
-        /*implement*/
+    /**
+     * Adds <code>recorded</code> to <code>Record</code> object.
+     * @param recorded recorded to add
+     */
+    public void add(Recorded recorded) {
+        recordeds.add(recorded);
     }
 
     public void delete() {

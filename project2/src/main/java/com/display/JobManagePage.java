@@ -1,15 +1,13 @@
 package com.display;
 
-//��µ� ����
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 
-public class JobManagePage extends JFrame implements Displayable{
+public class JobManagePage extends JFrame implements Displayable {
 	private JTable taskTable;
-	private final String[] column = {"������Ʈ��","������","���� ������"};
+	private final String[] column = {"아이디","이름","직책"};
 	private JButton completeBtn, addtaskBtn;
 	private JScrollPane taskScroll;
 	private JPanel BtnPnl;
@@ -28,9 +26,9 @@ public class JobManagePage extends JFrame implements Displayable{
 		this.add("Center",taskScroll);
 		
 		BtnPnl = new JPanel(new FlowLayout());
-		completeBtn = new JButton("�۾�üũ");
+		completeBtn = new JButton("작업체크");
 		BtnPnl.add(completeBtn);
-		addtaskBtn = new JButton("�۾�����");
+		addtaskBtn = new JButton("작업생성");
 		BtnPnl.add(addtaskBtn);
 		this.add("South",BtnPnl);
 	}

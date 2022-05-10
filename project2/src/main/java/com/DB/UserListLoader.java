@@ -1,7 +1,10 @@
 package com.DB;
 
 import java.util.ArrayList;
+import java.sql.ResultSet;
 import com.std.User;
+
+import java.sql.SQLException;
 
 /**
  * Class that loads arraylist of users.
@@ -9,24 +12,12 @@ import com.std.User;
  */
 public class UserListLoader extends Loader {
     @Override
-    protected Object initObj(ArrayList<Object>[] arr) {
+    protected Object initObj(ResultSet rs) throws SQLException {
         ArrayList<User> users = new ArrayList<User>();
-        ArrayList<Object>[] data = new ArrayList[arr.length];
-        UserLoader ul = new UserLoader();
-        int n = arr[0].size();
-
-        for(int i = 0; i < arr.length; i++) 
-            data[i] = new ArrayList<Object>();
         
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < arr.length; j++) 
-                data[j].add(arr[j].get(i));
+        while(rs.next()) 
+            users.add(new User(rs.getString("id"), rs.getString("password"), rs.getString("name")));
             
-            users.add((User) ul.initObj(data));
-            
-            for(int j = 0; j < arr.length; j++) 
-                data[j].remove(0);
-        }
         return users;
     }
 }

@@ -3,12 +3,12 @@ package com.std;
 import com.record.RecordManager;
 
 public abstract class FullTime extends Rank {
-    private String department;
+    private String dept;
     //private UIDisplayer displayer;
 
-    public FullTime(String role, String department) {
+    public FullTime(String role, String dept) {
         super(role);
-        this.department = department;
+        this.dept = dept;
     }
 
     public void searchRecord() {

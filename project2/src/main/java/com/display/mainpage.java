@@ -39,6 +39,7 @@ public class MainPage extends JFrame implements Displayable {
 			}
 		});
 	}
+	
 	public void display() {
 		setVisible(true);
 	}

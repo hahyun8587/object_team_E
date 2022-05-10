@@ -14,7 +14,21 @@ public class UIDisplayer {
         this.page = page;
     }
 
-    public void getData() {
+    /*
+    public String[] getData() {
         
+    }
+    */
+    
+    public void setFont() {
+        /*implement*/
+    }
+
+    public void setBackground() {
+        /*implement*/
+    }
+
+    public void setResolution() {
+        /*implement*/
     }
 }

@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MemberManagePage extends JFrame implements Displayable{
+public class MemberManagePage extends JFrame implements Displayable {
 	private final String[] column = {"tset","test","test","test"};
 	
 	private JScrollPane scrolledTable;

@@ -32,7 +32,7 @@ public class DAO {
         Class.forName(driver);
 
         conn = DriverManager.getConnection(url, id, pw);
-        pstmt = conn.prepareStatement(GlobalVariables.USERLIST_QUERY);
+        pstmt = conn.prepareStatement(GlobalVariables.USER_LIST_QUERY);
     }      
 
     /**

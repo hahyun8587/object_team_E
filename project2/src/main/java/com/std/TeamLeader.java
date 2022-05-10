@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class TeamLeader extends FullTime {
     private ArrayList<User> users;
     
-    public TeamLeader(String role, String department, ArrayList<User> users) {
-        super(role, department);
+    public TeamLeader(String role, String dept, ArrayList<User> users) {
+        super(role, dept);
         this.users = users;
     }
 

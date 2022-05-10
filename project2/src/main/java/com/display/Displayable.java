@@ -1,5 +1,6 @@
 package com.display;
 
 public interface Displayable {
-    public void display();
+    public abstract void display();
+    //public abstract String[] getData();
 }

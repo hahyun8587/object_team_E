@@ -3,7 +3,6 @@ package com.DB;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.regex.PatternSyntaxException;
 
 /**
@@ -18,38 +17,24 @@ public abstract class Loader {
      * @param pstmt the <code>PreparedStatement</code> object that linked with database
      * @param sql a sql query to execute
      * @throws SQLException 
-     * @throws PatternSyntaxException
      * @return specific object
      */
-    public Object load(PreparedStatement pstmt, String sql) throws SQLException, PatternSyntaxException {
-        ArrayList<Object>[] arr;
-        ResultSet rs = null;
-        Object obj = null;
+    public Object load(PreparedStatement pstmt, String sql) throws SQLException {
+        ResultSet rs = pstmt.executeQuery(sql);
+        Object obj = initObj(rs);
 
-        arr = new ArrayList[numCol(sql)];
-
-        for(int i = 0; i < arr.length; i++)
-            arr[i] = new ArrayList<Object>();
-
-        rs = pstmt.executeQuery(sql);
-           
-        while(rs.next()) {
-            for(int i = 0; i < arr.length; i++)
-                arr[i].add(rs.getObject(i + 1));
-        }
         rs.close();
-      
-        obj = initObj(arr);
 
         return obj;
     }
 
     /**
      * Primitive method that initializes specific object.
-     * @param arr array of arraylist of data that loaded from database
+     * @param rs a <code>ResultSet</code> object that loaded from database
+     * @throws SQLException
      * @return specific object
      */
-    protected abstract Object initObj(ArrayList<Object>[] arr);   
+    protected abstract Object initObj(ResultSet rs) throws SQLException;   
     
     /**
      * Returns the number of columns of the table that query returns.

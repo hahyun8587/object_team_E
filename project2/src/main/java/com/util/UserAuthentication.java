@@ -22,7 +22,7 @@ public class UserAuthentication {
      * Authenticate user with ids and passwords.
      * @param id id of user 
      * @param pw password of user
-     * @return <code>User</code> object if given id and password is correct, otherwise, null
+     * @return <code>User</code> object if given id and password is correct, otherwise, <code>null</code>
      */
     public User authenticate(String id, String pw) {
         Iterator<User> it = users.iterator();

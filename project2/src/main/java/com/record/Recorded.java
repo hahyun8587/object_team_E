@@ -4,15 +4,30 @@ import com.std.User;
 
 /**
  * Association class that connects <code>User</code> class and <code>Record</code> class.
- * This class represents record of single participant.
+ * This class represents a record of single participant.
  */
 public class Recorded {
     private User participant;
     private Record record;
 
     /**
-     * Gets participant of the record.
-     * @return participant of the record
+     * Constructs <code>Recorded</code> object with <code>participant</code> and <code>record</code>.
+     * Constructed <code>Recorded</code> object is added to <code>Record</code> object and <code>rm</code> object that the constructor got.
+     * @param participant a participant of the record 
+     * @param record the record that <code>Recorded</code> object represents 
+     * @param rm a record manager that manages the <code>Recorded</code> object
+     */
+    public Recorded(User participant, Record record, RecordManager rm) {
+        this.participant = participant;
+        this.record = record;
+
+        record.add(this);
+        rm.addRecorded(this);
+    }
+
+    /**
+     * Gets a participant of the record.
+     * @return a participant of the record
      */
     public User getParticipant(){
         return participant;
@@ -25,5 +40,4 @@ public class Recorded {
     public Record getRecord() {
         return record;
     } 
-
 }

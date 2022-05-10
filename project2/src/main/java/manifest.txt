@@ -1,2 +1,0 @@
-Class-Path: C:\Users\백하현\.m2\repository\mysql\mysql-connector-java\8.0.29\mysql-connector-java-8.0.29.jar
-Main-Class: com.main.Main

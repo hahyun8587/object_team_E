@@ -1,26 +1,26 @@
 package com.DB;
 
 import java.util.ArrayList;
-import java.util.regex.PatternSyntaxException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import com.std.User;
 import com.std.TeamLeader;
-import com.util.GlobalVariables;
 
 public class TeamLeaderLoader extends Loader {
+    private ArrayList<User> users;
+    
+    /**
+     * Constructs <code>TeamLeaderLoader with <code>users</code>.
+     * @param users array list of user 
+     */
+    public TeamLeaderLoader(ArrayList<User> users) {
+        this.users = users;
+    }
+    
     @Override
-    protected Object initObj(ArrayList<Object>[] arr) {
-        try {
-            DAO dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL, GlobalVariables.ID, GlobalVariables.PASSWORD);
-            
-            dao.setLoader(new UserListLoader());
-            
-            return new TeamLeader((String) arr[0].get(0), (String) arr[1].get(0), (ArrayList<User>) dao.loadInstance(GlobalVariables.USERLIST_QUERY)); 
-        } catch(ClassCastException e) {
-            e.printStackTrace();
-        } catch(PatternSyntaxException e) {
-            e.printStackTrace();
-        } finally {
-            return null;
-        }
+    protected Object initObj(ResultSet rs) throws SQLException{   
+        rs.next();
+        
+        return new TeamLeader(rs.getString("role"), rs.getString("dept"), users); 
     }
 }

@@ -28,7 +28,7 @@ public class User {
     }
 
     /**
-     * Gives <code>User</code> object by using id and password.
+     * Gives <code>User</code> object by using <code>id</code> and <code>pw</code>.
      * Gives <code>null</code> if login fails.
      * @param ua <code>UserAuthentication</code> object
      * @param id id of user

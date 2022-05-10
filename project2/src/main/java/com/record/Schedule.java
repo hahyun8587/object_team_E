@@ -4,13 +4,19 @@ package com.record;
  * Class that represents schedule.
  */
 
-
 public class Schedule extends Record {
-    private String date;    
+    private String date;
 
-    public Schedule(String name) {
+    /**
+     * Constructs <code>Schedule</code> object with <code>name</code> and <code>date</code>.
+     * @param name name of the schedule
+     * @param date date of the schedule
+     */
+    public Schedule(String name, String date) {
         super(name);
+        this.date = date;
     }
+
     /**
      * Sets date of the schedule.
      * @param date date of the schedule to set

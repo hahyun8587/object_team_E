@@ -1,5 +1,6 @@
 package com.main;
 
+import java.util.ArrayList;
 import java.lang.Thread;
 import com.DB.*;
 import com.display.*;
@@ -21,10 +22,11 @@ public class Main {
 
             dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL,GlobalVariables.ID, GlobalVariables.PASSWORD);
 
-            dao.setLoader(new UserAuthenticationLoader());
+            dao.setLoader(new UserListLoader());
             
-            ua = (UserAuthentication) dao.loadInstance(GlobalVariables.USERLIST_QUERY);
+            ua = new UserAuthentication((ArrayList<User>) dao.loadInstance(GlobalVariables.USER_LIST_QUERY));
             ud = new UIDisplayer();
+
             ud.setPage(lp = new LoginPage());
         
             do {
@@ -38,7 +40,7 @@ public class Main {
                 } catch(InterruptedException e) {
                     e.printStackTrace();
                 }    
-            } while((user = ua.authenticate(data[0], data[1])) == null);
+            } while((user = User.login(ua, data[0], data[1])) == null);
 
             System.out.println("login succes");
 
