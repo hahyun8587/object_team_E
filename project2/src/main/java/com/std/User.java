@@ -44,39 +44,39 @@ public class User {
     }
 
     /**
-     * Sets id of user.
-     * @param id id of user
+     * Sets id of <code>User</code> object.
+     * @param id id to set
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * Sets password of user.
-     * @param pw password of user
+     * Sets password of <code>User</code> object.
+     * @param pw password to set
      */
     public void setPw(String pw) {
         this.pw = pw;
     }
 
     /**
-     * Sets name of user.
-     * @param name name of user
+     * Sets name of <code>User</code> object.
+     * @param name name to set
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Sets rank of user.
-     * @param rank rank of user
+     * Sets rank of <code>User</code> object.
+     * @param rank rank to set
      */
     public void setRank(Rank rank) {
         this.rank = rank;
     }
     
     /**
-     * Gets id of user.
+     * Gets id from <code>User</code> object.
      * @return id of user
      */
     public String getId() {
@@ -84,7 +84,7 @@ public class User {
     }
 
     /**
-     * Gets password of user.
+     * Gets password from <code>User</code> object.
      * @return password of user
      */
     public String getPw() {

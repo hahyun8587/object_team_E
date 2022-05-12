@@ -1,6 +1,9 @@
 package com.record;
 
 import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Iterator;
+import com.std.User;
 
 /**
  * Class that represents record.
@@ -25,12 +28,22 @@ public class Record {
         recordeds.add(recorded);
     }
 
-    public void delete() {
-        /*implement*/
+    public void delete(int i) {
+        
     }
 
-    public void getAllParticipants() {
-        /*implement*/
+    /**
+     * Gets participant of all <code>Recorded</code> objects in array list.  
+     * @return array list of participant
+     */
+    public ArrayList<User> getAllParticipants() {
+        ArrayList<User> participants = new ArrayList<User>();
+        Iterator<Recorded> it = recordeds.iterator();
+
+        while(it.hasNext()) 
+            participants.add(it.next().getParticipant());
+        
+        return participants;
     }
 
     /**

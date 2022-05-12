@@ -26,16 +26,16 @@ public class Recorded {
     }
 
     /**
-     * Gets a participant of the record.
-     * @return a participant of the record
+     * Gets a participant from <code>Recorded</code> object.
+     * @return a participant of record
      */
     public User getParticipant(){
         return participant;
     }
 
     /**
-     * Gets the record that <code>Recorded</code> object represents.
-     * @return the record that <code>Recorded</code> object represents
+     * Gets a record from <code>Recorded</code> object.
+     * @return a record that <code>Recorded</code> object represents
      */
     public Record getRecord() {
         return record;

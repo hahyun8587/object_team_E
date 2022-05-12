@@ -14,6 +14,14 @@ import java.sql.SQLException;
  */
 public abstract class RecordManagerListLoader extends Loader {
     private ArrayList<User> users;
+    
+    /**
+     * Constructs <code>RecordManagerListLoader</code> object with <code>users</code>.
+     * @param users array list of user
+     */
+    public RecordManagerListLoader(ArrayList<User> users) {
+        this.users = users;
+    }
 
     @Override
     protected Object initObj(ResultSet rs) throws SQLException {

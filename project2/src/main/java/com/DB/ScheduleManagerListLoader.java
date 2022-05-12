@@ -1,5 +1,6 @@
 package com.DB;
 
+import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
 import com.record.Record;
@@ -15,6 +16,15 @@ import java.sql.SQLException;
  * This class is applied template design pattern. 
  */
 public class ScheduleManagerListLoader extends RecordManagerListLoader {
+
+    /**
+     * Constructs <code>ScheduleManagerListLoader</code> object with <code>users</code>.
+     * @param users array list of users
+     */
+    public ScheduleManagerListLoader(ArrayList<User> users) {
+        super(users);
+    }
+
     @Override
     protected Record getRecord(ResultSet rs) throws SQLException {
         return new Schedule(rs.getString("name"), rs.getString("date"));

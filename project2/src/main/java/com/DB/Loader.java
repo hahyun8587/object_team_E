@@ -3,7 +3,6 @@ package com.DB;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.regex.PatternSyntaxException;
 
 /**
  * Abstract class that loads specific object from database.
@@ -35,29 +34,4 @@ public abstract class Loader {
      * @return specific object
      */
     protected abstract Object initObj(ResultSet rs) throws SQLException;   
-    
-    /**
-     * Returns the number of columns of the table that query returns.
-     * @param sql a sql qeury to execute
-     * @throws PatternSyntaxException
-     * @return the number of columns of the table that the query returns 
-     */
-    private int numCol(String sql) throws PatternSyntaxException {
-        String[] strs;
-        int i;
-        int count = 0;
-
-        strs = sql.toLowerCase().replaceAll(",", " ").split(" ");
-
-        for(i = 0; !strs[i].equals("select"); i++);
-        
-        for(i = i + 1; !strs[i].equals("from"); i++) {
-
-            if(strs[i].equals("as"))
-                i++;
-            else if(!strs[i].equals("as") && !strs[i].isBlank()) 
-                count++;
-        }
-        return count;
-    }
 }

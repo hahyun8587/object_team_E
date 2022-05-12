@@ -16,6 +16,15 @@ import java.sql.SQLException;
  * This class is applied template design pattern. 
  */
 public class JobManagerListLoader extends RecordManagerListLoader {
+
+    /**
+     * Constructs <code>JobManagerListLoader</code> with <code>users</code>.
+     * @param users array list of user
+     */
+    public JobManagerListLoader(ArrayList<User> users) {
+        super(users);
+    }
+
     @Override
     protected Record getRecord(ResultSet rs) throws SQLException {
         return new Job(rs.getString("name"), rs.getString("due_date"), rs.getInt("progress"), rs.getInt("priority"));

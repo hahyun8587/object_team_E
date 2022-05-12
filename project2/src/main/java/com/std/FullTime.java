@@ -19,8 +19,11 @@ public abstract class FullTime extends Rank {
         /*implement*/
     }
 
+    /**
+     * Sets record manager of <code>FullTime</code> object.
+     * @param rm record manager to set
+     */
     public void setRecordManager(RecordManager rm) {
-        /*implement*/
+        this.rm = rm;
     }
-
 }
