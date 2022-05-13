@@ -42,7 +42,6 @@ public class MemberManagePage extends JFrame implements Displayable {
 		buttonPanel.add(usergroupbutton);
 		buttonPanel.add(creatememberbutton);
 		this.add(buttonPanel);
-		
 		usergroupbutton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				new UserGroupDisplay().display();

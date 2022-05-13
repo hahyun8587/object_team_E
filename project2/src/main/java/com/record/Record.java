@@ -8,7 +8,7 @@ import com.std.User;
 /**
  * Class that represents record.
  */
-public class Record {
+public abstract class Record {
     private String name;
     private Vector<Recorded> recordeds;
 
@@ -28,13 +28,17 @@ public class Record {
         recordeds.add(recorded);
     }
 
-    public void delete(int i) {
-        
+    /**
+     * Remove specific </code>Reocroded</code> object in array list. 
+     * @param recorded a <code>Recorded</code> object to remove
+     */
+    public void delete(Recorded recorded) {
+        recordeds.remove(recorded);
     }
 
     /**
-     * Gets participant of all <code>Recorded</code> objects in array list.  
-     * @return array list of participant
+     * Gets each participant of all <code>Recorded</code> objects in array list.  
+     * @return an array list of participant
      */
     public ArrayList<User> getAllParticipants() {
         ArrayList<User> participants = new ArrayList<User>();

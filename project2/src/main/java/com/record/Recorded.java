@@ -6,7 +6,7 @@ import com.std.User;
  * Association class that connects <code>User</code> class and <code>Record</code> class.
  * This class represents a record of single participant.
  */
-public class Recorded {
+public abstract class Recorded {
     private User participant;
     private Record record;
 
@@ -29,7 +29,7 @@ public class Recorded {
      * Gets a participant from <code>Recorded</code> object.
      * @return a participant of record
      */
-    public User getParticipant(){
+    public User getParticipant() {
         return participant;
     }
 

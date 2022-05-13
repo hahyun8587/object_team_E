@@ -7,7 +7,7 @@ import com.record.RecordManager;
  */
 public class Rank {
     private String role;
-    RecordManager rm;
+    protected RecordManager rm;
 
     /**
      * Constructs a <code>Rank</code> object with <code>role</code> and <code>rm</code>.
