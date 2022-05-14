@@ -1,10 +1,10 @@
 package com.DB;
 
+import java.sql.PreparedStatement;
 import com.util.Observer;
 import com.record.RecordManager;
 
 public abstract class Saver implements Observer {
-    public abstract void update(RecordManager rm);
-    
-    
+    public abstract void save(PreparedStatement pstmt);
+    public abstract void update(RecordManager rm);    
 }

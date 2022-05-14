@@ -1,9 +1,10 @@
 package com.display;
 
 import java.awt.event.*;
+import java.awt.Color;
 import javax.swing.*;
 
-public class LoginPage extends JFrame implements Displayable {
+public class LoginPage extends FramePage implements Displayable {
 	private JPanel loginPanel = new JPanel();
 	private JLabel idLabel = new JLabel("아이디");
 	private JLabel pwLabel = new JLabel("비밀번호 ");
@@ -15,7 +16,8 @@ public class LoginPage extends JFrame implements Displayable {
 	private String[] data = null;
 
 	public LoginPage() {
-		super("로그인 창");
+		
+		setTitle("로그인 창");
 		loginPanel.setLayout(null);
 		setContentPane(loginPanel);
 		

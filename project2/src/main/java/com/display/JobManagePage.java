@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 
-public class JobManagePage extends JFrame implements Displayable {
+public class JobManagePage extends FramePage implements Displayable {
 	private JTable taskTable;
 	private final String[] column = {"아이디","이름","직책"};
 	private JButton completeBtn, addtaskBtn;

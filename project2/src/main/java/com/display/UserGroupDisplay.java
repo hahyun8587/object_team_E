@@ -7,7 +7,7 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import java.awt.*;
 
-public class UserGroupDisplay extends JFrame implements Displayable {
+public class UserGroupDisplay extends FramePage implements Displayable {
 	private JComboBox<String> groupList;
 	private JButton selectBtn;
 

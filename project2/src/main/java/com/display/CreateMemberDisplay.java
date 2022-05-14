@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CreateMemberDisplay extends JFrame implements Displayable {
+public class CreateMemberDisplay extends FramePage implements Displayable {
 	private final String[] labels= {"test"," test1","test2  "};
 	private JTextField []field = new JTextField[3];
 	private JButton confirmBtn;
