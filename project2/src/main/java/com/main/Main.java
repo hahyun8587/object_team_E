@@ -44,7 +44,7 @@ public class Main {
 
             System.out.println("login succes");
 
-            ud.setPage(new MainPage());
+            ud.setPage(new MainPage(ua)); //HSD: In order to print out the list of members from the member management page, the ua is passed to the main page.
             ud.displayPage();
 
             dao.close();

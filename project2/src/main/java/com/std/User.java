@@ -90,4 +90,8 @@ public class User {
     public String getPw() {
         return pw;
     }
+
+    public String getName(){ // HSD: Get Name to display the name from displayer
+        return name;
+    }
 }
