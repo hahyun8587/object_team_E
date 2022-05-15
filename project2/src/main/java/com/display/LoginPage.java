@@ -41,7 +41,6 @@ public class LoginPage extends FramePage implements Displayable {
 		setSize(350, 150);
 
 		setLocationRelativeTo(null);
-		//this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 		loginBtn.addActionListener(new ActionListener() {

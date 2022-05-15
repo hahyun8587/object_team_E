@@ -77,11 +77,11 @@ public class DAO {
         conn.close();
         pstmt.close();
     }
+    
+    public PreparedStatement getPstmt() {
+        return pstmt;
+    }
 
-    /**
-     * Sets loader that loads specific object from database.
-     * @param loader
-     */
     public void setLoader(Loader loader) {
         this.loader = loader;
     }
