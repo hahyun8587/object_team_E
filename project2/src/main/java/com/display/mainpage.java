@@ -19,7 +19,7 @@ public class MainPage extends FramePage implements Displayable {
 	private JButton scheduleBtn = new JButton("회의일정");
 	private JButton saveBtn = new JButton("파일불러오기");
 
-	public MainPage() {
+	public MainPage(UserAuthentication ua) {
 
 		setTitle("로그인 페이지");
 		setContentPane(loginPanel);
@@ -47,7 +47,7 @@ public class MainPage extends FramePage implements Displayable {
 		memberManagementBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new MemberManagePage().display();
+				new MemberManagePage(ua).display(); // HSD: the received 'ua' back to the member management page.
 			}
 		});
 		settingBtn.addActionListener(new ActionListener() {
