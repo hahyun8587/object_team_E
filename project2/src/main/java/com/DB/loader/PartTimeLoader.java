@@ -1,6 +1,7 @@
-package com.DB;
+package com.DB.loader;
 
 import java.sql.ResultSet;
+
 import com.std.PartTime;
 
 import java.sql.SQLException;

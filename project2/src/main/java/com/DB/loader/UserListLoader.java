@@ -1,7 +1,8 @@
-package com.DB;
+package com.DB.loader;
 
 import java.util.ArrayList;
 import java.sql.ResultSet;
+
 import com.std.User;
 
 import java.sql.SQLException;

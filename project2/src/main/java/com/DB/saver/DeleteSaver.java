@@ -1,6 +1,7 @@
-package com.DB;
+package com.DB.saver;
 
 import java.sql.PreparedStatement;
+
 import com.record.RecordManager;
 
 import java.sql.SQLException;

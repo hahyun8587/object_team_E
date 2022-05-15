@@ -1,7 +1,8 @@
-package com.DB;
+package com.DB.saver;
 
 import java.sql.PreparedStatement;
 import com.util.Observer;
+import com.DB.DAO;
 import com.record.RecordManager;
 import com.util.GlobalVariables;
 
@@ -33,5 +34,9 @@ public abstract class Saver implements Observer {
         pstmt.executeUpdate(sql);
     }
 
+    /**
+     * Saves databse changes when <code>RecordManager</code> class notifies.
+     * @param rm a specific record manager object
+     */
     public abstract void update(RecordManager rm);    
 }
