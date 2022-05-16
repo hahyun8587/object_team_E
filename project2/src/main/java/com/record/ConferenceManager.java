@@ -1,5 +1,6 @@
 package com.record;
 
+import com.DB.Query;
 import com.std.User;
 
 /**
@@ -8,7 +9,7 @@ import com.std.User;
 public class ConferenceManager extends RecordManager {
     @Override
     public void register(User participant, Record record, RecordManager rm) {
-        temp = new Conferenced(participant, (Conference) record, (ConferenceManager) rm);
+        sql = Query.getInsertQuery(new Conferenced(participant, (Conference) record, (ConferenceManager) rm));
 
         _notifyAll();
     }

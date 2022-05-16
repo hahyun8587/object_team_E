@@ -17,4 +17,9 @@ public class Assigned extends Recorded {
     public Assigned(User participant, Job job, JobManager jm) {
         super(participant, job, jm);
     }     
+
+    @Override
+    public String toString() {
+        return "job";
+    }
 }

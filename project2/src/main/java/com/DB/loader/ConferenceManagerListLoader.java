@@ -22,6 +22,7 @@ public class ConferenceManagerListLoader extends RecordManagerListLoader {
      */
     public ConferenceManagerListLoader(ArrayList<User> users) {
         super(users);
+        name = "ConferenceManagerListLoader";
     }
 
     @Override

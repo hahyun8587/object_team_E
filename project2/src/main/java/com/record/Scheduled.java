@@ -22,6 +22,11 @@ public class Scheduled extends Recorded{
         this.alarm = alarm;
     }
     
+    @Override
+    public String toString() {
+        return "schedule";
+    }
+
     /**
      * Sets alarm.
      * @param alarm alarm to set

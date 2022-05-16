@@ -33,8 +33,8 @@ public class MemberManagePage extends JFrame implements Displayable {
 	private String content[][];
 	private UserAuthentication uat;
 	
-	public MemberManagePage(UserAuthentication ua){
-		
+	public MemberManagePage(){
+		/** 
 		content = new String[ua.getUsers().size()][2];
 		uat = ua;
 
@@ -46,6 +46,7 @@ public class MemberManagePage extends JFrame implements Displayable {
 //			content[i][2] = ua.getUsers().get(i).rank.getRank();
 //			content[i][2] = "TeamLeader";
 		}
+		**/
 		
 		setTitle("User Manager");
 		setSize(1200,900);
@@ -75,7 +76,7 @@ public class MemberManagePage extends JFrame implements Displayable {
 		});
 		creatememberbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new CreateMemberDisplay(this).display();
+				new CreateMemberDisplay().display();
 			}
 		});
 	}

@@ -23,7 +23,7 @@ public class User {
         this.name = name;
     }
 
-    public void signUp() {
+    public static synchronized void signUp() {
         /*implement*/
     }
 

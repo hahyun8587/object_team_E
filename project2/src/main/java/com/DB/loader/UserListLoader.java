@@ -12,6 +12,13 @@ import java.sql.SQLException;
  * This class is applied template design pattern. 
  */
 public class UserListLoader extends Loader {
+    /**
+     * Constructs a <code>UserListLoader</code> object.
+     */
+    public UserListLoader() {
+        name = "UserListLoader";
+    }
+
     @Override
     protected Object initObj(ResultSet rs) throws SQLException {
         ArrayList<User> users = new ArrayList<User>();

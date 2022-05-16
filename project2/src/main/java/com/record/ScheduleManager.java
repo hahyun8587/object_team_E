@@ -1,14 +1,15 @@
 package com.record;
 
+import com.DB.Query;
 import com.std.User;
 
 /**
- * Class that manage schedules.
+ * Class that manages schedules.
  */
 public class ScheduleManager extends RecordManager {
     @Override
     public void register(User participant, Record record, RecordManager rm) {
-        temp = new Scheduled(participant, (Schedule) record, (ScheduleManager) rm, null);
+        sql = Query.getInsertQuery(new Scheduled(participant, (Schedule) record, (ScheduleManager) rm, null));
 
         _notifyAll();
     }

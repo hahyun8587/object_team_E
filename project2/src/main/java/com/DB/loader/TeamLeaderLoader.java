@@ -15,6 +15,7 @@ public class TeamLeaderLoader extends Loader {
      */
     public TeamLeaderLoader(ArrayList<User> users) {
         this.users = users;
+        name = "TeamLeaderLoader";
     }
     
     @Override

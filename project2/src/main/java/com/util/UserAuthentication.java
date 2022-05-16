@@ -2,6 +2,7 @@ package com.util;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
 import com.std.User;
 
 /**
@@ -9,7 +10,9 @@ import com.std.User;
  */
 public class UserAuthentication {
     private ArrayList<User> users;
-    
+    private UserObserver observer;
+    private String sql;
+
     /**
      * Constructs a <code>UserAuthentication</code> with <code>users</code>
      * @param users arraylist of users
@@ -34,6 +37,14 @@ public class UserAuthentication {
                 return user;
         }
         return null;
+    }
+
+    public void addUser(User user) {
+
+    }
+
+    public void _notify() {
+        observer.update(this);
     }
 
     /**

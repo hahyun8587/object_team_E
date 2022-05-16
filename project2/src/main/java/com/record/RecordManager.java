@@ -2,8 +2,10 @@ package com.record;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import com.DB.Query;
 import com.std.User;
-import com.util.Observer;
+import com.util.RecordObserver;
 
 /**
  * Abstract class that manages records.
@@ -11,8 +13,8 @@ import com.util.Observer;
  */
 public abstract class RecordManager {
     private ArrayList<Recorded> recordeds;
-    private ArrayList<Observer> observers; 
-    protected Recorded temp;
+    private ArrayList<RecordObserver> observers;
+    protected String sql;
 
     public void modify() {
         /*implement*/
@@ -29,14 +31,16 @@ public abstract class RecordManager {
     /**
      * Removes ith <code>Recorded</code> object from array list.
      * The <code>Recorded</code> object is also removed from <code>Record</code> object's vector.
-     * Removed object is assigned to <code>temp</code> for saving. 
+     * Sql query for deleting certain record is assigned to <code>sql</code>.
      * @param i an index of <code>Recorded</code> object to remove
      */
     public void delete(int i) {
-        temp = recordeds.get(i);
+        Recorded recorded = recordeds.get(i);
         
-        temp.getRecord().delete(temp);
-        recordeds.remove(i);
+        sql = Query.getDeleteQuery(recorded);
+
+        recorded.getRecord().delete(recorded);
+        recordeds.remove(i);        
         _notifyAll();
     }
 
@@ -44,7 +48,7 @@ public abstract class RecordManager {
      * Adds an <code>Observer</code> object to array list of observer.
      * @param observer an <code>Observer</code> object to add
      */
-    public void attach(Observer observer) {
+    public void attach(RecordObserver observer) {
         observers.add(observer);
     }
 
@@ -60,7 +64,7 @@ public abstract class RecordManager {
      * Notifies all of the <code>Observer</code> objects in array list.
      */
     protected void _notifyAll() {
-        Iterator<Observer> it = observers.iterator();
+        Iterator<RecordObserver> it = observers.iterator();
      
         while(it.hasNext())
             it.next().update(this); 
@@ -72,13 +76,5 @@ public abstract class RecordManager {
      */
     public ArrayList<Recorded> getRecordeds() {
         return recordeds;
-    }
-
-    /**
-     * Get a temporary <code>Recorded</code> object for saving.
-     * @return a temporary <code>Recorded</code> object
-     */
-    public Recorded getTemp() {
-        return temp;
     }
 }

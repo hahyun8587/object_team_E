@@ -23,6 +23,7 @@ public class ScheduleManagerListLoader extends RecordManagerListLoader {
      */
     public ScheduleManagerListLoader(ArrayList<User> users) {
         super(users);
+        name = "ScheduleManagerListLoader";
     }
 
     @Override

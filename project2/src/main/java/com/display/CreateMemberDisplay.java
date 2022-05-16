@@ -13,7 +13,7 @@ public class CreateMemberDisplay extends JFrame implements Displayable {
 	private JButton confirmBtn;
 	private JButton cancelBtn;
 	private JPanel textPnl, btnPnl;
-	public CreateMemberDisplay(MemberManagePage mp)
+	public CreateMemberDisplay()
 	{
 		setTitle("Add Member Manager");
 		setSize(300,400);

@@ -5,7 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import com.DB.loader.Loader;
-import com.DB.saver.Saver;
+import com.record.RecordManager;
+import com.util.RecordObserver;
+import com.util.UserAuthentication;
+import com.util.UserObserver;
 import com.util.GlobalVariables;
 
 import java.sql.SQLException;
@@ -13,12 +16,11 @@ import java.util.regex.PatternSyntaxException;
 
 /**
  * Data Access Object class that access mysql database.
- * This class is applied singleton design pattern.
+ * This class is applied singleton design pattern and observer design pattern.
  */
-public class DAO {
+public class DAO implements RecordObserver, UserObserver {
     private static DAO dao = null;
     private Loader loader;
-    private Saver saver;
     private Connection conn;
     private PreparedStatement pstmt;
 
@@ -68,8 +70,23 @@ public class DAO {
         return loader.load(pstmt, sql);
     }
 
-    public void saveData() {
+    /**
+     * Saves data to a database using query.
+     * @param sql a sql query to execute
+     * @throws SQLException
+     */
+    public void saveData(String sql) throws SQLException {
+        Saver.save(pstmt, sql);
+    }
+
+    @Override
+    public void update(RecordManager rm) {
         /*implement*/
+    }
+
+    @Override
+    public void update(UserAuthentication ua) {
+        /*implement*/   
     }
 
     /**

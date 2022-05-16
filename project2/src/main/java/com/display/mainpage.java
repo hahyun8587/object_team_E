@@ -8,6 +8,8 @@ import java.net.URISyntaxException;
 
 import javax.swing.*;
 
+import com.util.UserAuthentication;
+
 public class MainPage extends FramePage implements Displayable {
 
 	private JPanel loginPanel = new JPanel(new GridLayout(4, 2));
@@ -19,9 +21,8 @@ public class MainPage extends FramePage implements Displayable {
 	private JButton scheduleBtn = new JButton("회의일정");
 	private JButton saveBtn = new JButton("파일불러오기");
 
-	public MainPage(UserAuthentication ua) {
-
-		setTitle("로그인 페이지");
+	public MainPage() {
+		setTitle("메인페이지");
 		setContentPane(loginPanel);
 
 		loginPanel.add(idLabel);
@@ -47,7 +48,7 @@ public class MainPage extends FramePage implements Displayable {
 		memberManagementBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new MemberManagePage(ua).display(); // HSD: the received 'ua' back to the member management page.
+				new MemberManagePage().display(); // HSD: the received 'ua' back to the member management page.
 			}
 		});
 		settingBtn.addActionListener(new ActionListener() {

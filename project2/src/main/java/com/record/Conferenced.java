@@ -16,4 +16,9 @@ public class Conferenced extends Recorded {
     public Conferenced(User participant, Conference conference, ConferenceManager cm) {
         super(participant, conference, cm);
     }
+
+    @Override 
+    public String toString() {
+        return "conference";
+    }
 }

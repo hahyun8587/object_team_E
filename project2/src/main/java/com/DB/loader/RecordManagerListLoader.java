@@ -21,6 +21,7 @@ public abstract class RecordManagerListLoader extends Loader {
      */
     public RecordManagerListLoader(ArrayList<User> users) {
         this.users = users;
+        name = "RecordMangerListLoader";
     }
 
     @Override

@@ -9,6 +9,7 @@ import java.sql.SQLException;
  * This class is applied template design pattern.
  */
 public abstract class Loader {  
+    protected String name;
 
     /**
      * Template method that loads specific object from database.

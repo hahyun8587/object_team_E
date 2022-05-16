@@ -23,6 +23,7 @@ public class JobManagerListLoader extends RecordManagerListLoader {
      */
     public JobManagerListLoader(ArrayList<User> users) {
         super(users);
+        name = "JobManagerListLoader";
     }
 
     @Override
