@@ -13,8 +13,8 @@ public class Conferenced extends Recorded {
      * @param conference the conference that <code>Conferenced</code> object represents
      * @param cm conference manger that manages the <code>Conferenced</code> object
      */
-    public Conferenced(User participant, Conference conference, ConferenceManager cm) {
-        super(participant, conference, cm);
+    public Conferenced(User participant, Conference conference) {
+        super(participant, conference);
     }
 
     @Override 

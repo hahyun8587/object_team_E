@@ -9,7 +9,7 @@ public class Query {
      * @return query for deleting
      */
     public static String getDeleteQuery(Recorded recorded) {
-        return "DELETE FROM " + recorded.toString() + " WHERE id = \"" + recorded.getParticipant().getId() + "\" and name = \"" + recorded.getRecord().getName() + "\"";
+        return "DELETE FROM " + recorded + " WHERE id = \"" + recorded.getParticipant().getId() + "\" and name = \"" + recorded.getRecord().getName() + "\"";
     }
    
     /**
@@ -18,7 +18,7 @@ public class Query {
      * @return query for inserting
      */
     public static String getInsertQuery(Recorded recorded) {       
-        return "INSERT INTO " + recorded.toString() + "(id, name) VALUES (" + recorded.getParticipant().getId() + ", " + recorded.getRecord().getName() + ")";
+        return "INSERT INTO " + recorded + "(id, name) VALUES (" + recorded.getParticipant().getId() + ", " + recorded.getRecord().getName() + ")";
     }
 
     public void getModifyQuery(Recorded recorded) {

@@ -14,7 +14,7 @@ public class Saver {
      * @param sql a sql query to execute
      * @throws SQLException
      */
-    public static void save(PreparedStatement pstmt, String sql) throws SQLException {
+    public void save(PreparedStatement pstmt, String sql) throws SQLException {
         pstmt.executeUpdate(sql);
     } 
 }

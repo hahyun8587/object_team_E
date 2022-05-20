@@ -4,35 +4,56 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.DB.Query;
-import com.std.User;
 import com.util.RecordObserver;
+import com.util.Mediator;
 
 /**
  * Abstract class that manages records.
- * This class is applied observer pattern.
+ * This class is applied observer, mediator, and factory design pattern.
  */
 public abstract class RecordManager {
-    private ArrayList<Recorded> recordeds;
+    protected ArrayList<Recorded> recordeds;
     private ArrayList<RecordObserver> observers;
-    protected String sql;
+    protected Mediator mediator;
+    private String sql;
+
+    /**
+     * Constructs <code>RecordManager</code>
+     * @param recordeds
+     */
+    public RecordManager(ArrayList<Recorded> recordeds) {
+        this.recordeds = recordeds;
+    }
 
     public void modify() {
         /*implement*/
     }
 
     /**
-     * Add a <code>Recorded</code> object to specific <code>record</code> and <code>rm</code>.   
-     * @param participant a participant who participates a record 
-     * @param record the record to add
-     * @param rm record manager that manages the record
+     * Add a specific recorded to array list by using <code>args</code>. 
+     * @param args arguments used to initialize a specific recorded 
      */
-    public abstract void register(User participant, Record record, RecordManager rm); 
+    public void register(String[] args) {
+        Recorded recorded = create(args);
+        sql = Query.getInsertQuery(recorded);
+
+        recordeds.add(recorded);
+        _notifyAll();
+    }
+    
+    /**
+     * Adds a specific recorded to user whose id is <code>id</code>.  
+     * @param id an id of user who will be added a specific recorded
+     * @param args arguments used to initialize the specific recorded
+     * @return 0 if registeration succeeds, otherwise, -1
+     */
+    public abstract int registerTo(String id, String[] args); 
         
     /**
-     * Removes ith <code>Recorded</code> object from array list.
+     * Removes an ith specific recorded from array list.
      * The <code>Recorded</code> object is also removed from <code>Record</code> object's vector.
      * Sql query for deleting certain record is assigned to <code>sql</code>.
-     * @param i an index of <code>Recorded</code> object to remove
+     * @param i an index of recorded to remove
      */
     public void delete(int i) {
         Recorded recorded = recordeds.get(i);
@@ -45,19 +66,26 @@ public abstract class RecordManager {
     }
 
     /**
+     * Removes an ith specific recorded from user whose id is <code>id</code>.
+     * @param id an id of user who will be deleted a specific recorded 
+     * @param i an index of the recorded to remove
+     * @return 0 if deletion succeeds, otherwise, -1
+     */
+    public abstract int deleteFrom(String id, int i);
+
+    /**
+     * Creates a specific recorded using <code>args</code>. 
+     * @param args arguments used to initialize a specific recorded
+     * @return the specific reocrded
+     */
+    protected abstract Recorded create(String[] args);
+
+    /**
      * Adds an <code>Observer</code> object to array list of observer.
      * @param observer an <code>Observer</code> object to add
      */
     public void attach(RecordObserver observer) {
         observers.add(observer);
-    }
-
-    /**
-     * Adds a <code>Recorded</code> object to array list of recorded.
-     * @param recorded a <code>Recorded</code> object to add
-     */
-    public void addRecorded(Recorded recorded) {
-        recordeds.add(recorded);
     }
 
     /**
@@ -73,7 +101,7 @@ public abstract class RecordManager {
     /**
      * Get array list of <code>Recorded</code> object.
      * @return array list of <code>Recorded</code> object
-     */
+     s*/
     public ArrayList<Recorded> getRecordeds() {
         return recordeds;
     }

@@ -10,6 +10,18 @@ public abstract class FullTime extends Rank {
         this.dept = dept;
     }
 
+    /**
+     * Deletes ith record.
+     * @param i an index of record to delete
+     */
+    public void deleteRecord(int i) {   
+        rm.delete(i);
+    }
+
+    public void registerRecord() {
+        /*implement*/
+    }
+
     public void searchRecord() {
         /*implement*/
     }

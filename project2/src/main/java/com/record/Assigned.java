@@ -14,8 +14,8 @@ public class Assigned extends Recorded {
      * @param job the job that <code>Assigned</code> object represents 
      * @param jm job manager that manages the <code>Assigned</code> object
      */
-    public Assigned(User participant, Job job, JobManager jm) {
-        super(participant, job, jm);
+    public Assigned(User participant, Job job) {
+        super(participant, job);
     }     
 
     @Override

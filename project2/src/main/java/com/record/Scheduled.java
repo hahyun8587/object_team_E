@@ -16,8 +16,8 @@ public class Scheduled extends Recorded{
      * @param sm schedule manager that manages the <code>Scheduled</code> object
      * @param alarm alarm that participant of the schedule setted
      */
-    public Scheduled(User participant, Schedule schedule, ScheduleManager sm, String alarm) {
-        super(participant, schedule, sm);
+    public Scheduled(User participant, Schedule schedule, String alarm) {
+        super(participant, schedule);
         
         this.alarm = alarm;
     }

@@ -14,16 +14,16 @@ public class TeamLeader extends FullTime {
         /*implement*/
     }   
 
-    public void registerRecord() {
+    public void registerRecordTo() {
         /*implement*/
     }
 
-    /**
-     * Deletes ith record.
-     * @param i an index of record to delete
-     */
-    public void deleteRecord(int i) {
-        rm.delete(i);
+    public void deleteRecordFrom() {
+        /*implement*/
+    }
+
+    public void searchRecord() {
+        /*implement*/
     }
 
     public void manageUser() {

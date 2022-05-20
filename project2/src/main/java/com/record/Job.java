@@ -23,6 +23,20 @@ public class Job extends Record{
     }
 
     /**
+     * Constructs <code>Job</code> object with <code>name</code>, <code>dueDate</code>, <code>priority</code>.
+     * <code>progress</code> is initialized to 0. 
+     * @param name name of the job
+     * @param dueDate dueDate of the job;
+     * @param priority priority of the job
+     */
+    public Job(String name, String dueDate, int priority) {
+        super(name);
+        this.dueDate = dueDate;
+        progress = 0;
+        this.priority = priority;
+    }
+
+    /**
      * Sets due date of the job.
      * @param dueDate due date of the job to set
      */

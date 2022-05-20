@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
 import com.record.Record;
-import com.record.RecordManager;
+import com.record.Recorded;
 import com.record.Job;
-import com.record.JobManager;
 import com.record.Assigned;
 
 import java.sql.SQLException;
@@ -15,15 +14,15 @@ import java.sql.SQLException;
  * Class that loads arraylist of <code>JobManager</code> object.
  * This class is applied template design pattern. 
  */
-public class JobManagerListLoader extends RecordManagerListLoader {
+public class AssignedListLoader extends RecordedListLoader {
 
     /**
      * Constructs <code>JobManagerListLoader</code> with <code>users</code>.
      * @param users array list of user
      */
-    public JobManagerListLoader(ArrayList<User> users) {
+    public AssignedListLoader(ArrayList<User> users) {
         super(users);
-        name = "JobManagerListLoader";
+        name = "AssignedListLoader";
     }
 
     @Override
@@ -32,12 +31,7 @@ public class JobManagerListLoader extends RecordManagerListLoader {
     }
 
     @Override
-    protected RecordManager getRecordManager() {
-        return new JobManager();
-    }
-
-    @Override
-    protected void initRecorded(ResultSet rs, User participant, Record record, RecordManager rm) {
-        new Assigned(participant, (Job) record, (JobManager) rm);    
+    protected Recorded initRecorded(ResultSet rs, User participant, Record record) {
+        return new Assigned(participant, (Job) record);    
     }  
 }

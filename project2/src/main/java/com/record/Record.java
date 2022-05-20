@@ -11,7 +11,7 @@ import com.std.User;
  */
 public abstract class Record {
     private String name;
-    private Vector<Recorded> recordeds;
+    private Vector<Recorded> recordeds = new Vector<Recorded>();
 
     /**
      * Constructs <code>Record</code> object with <code>name</code>.

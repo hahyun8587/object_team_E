@@ -21,6 +21,7 @@ import java.util.regex.PatternSyntaxException;
 public class DAO implements RecordObserver, UserObserver {
     private static DAO dao = null;
     private Loader loader;
+    private Saver saver = new Saver();
     private Connection conn;
     private PreparedStatement pstmt;
 
@@ -63,10 +64,8 @@ public class DAO implements RecordObserver, UserObserver {
      * @param arg an argument that used for initializing specific object
      * @return specific object
      * @throws SQLException
-     * @throws PatternSyntaxException
-     * @throws NullPointerException
      */
-    public Object loadInstance(String sql) throws SQLException, PatternSyntaxException, NullPointerException {
+    public Object loadInstance(String sql) throws SQLException {
         return loader.load(pstmt, sql);
     }
 
@@ -76,7 +75,7 @@ public class DAO implements RecordObserver, UserObserver {
      * @throws SQLException
      */
     public void saveData(String sql) throws SQLException {
-        Saver.save(pstmt, sql);
+        saver.save(pstmt, sql);
     }
 
     @Override

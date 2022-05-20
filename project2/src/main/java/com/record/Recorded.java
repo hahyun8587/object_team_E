@@ -12,17 +12,15 @@ public abstract class Recorded {
 
     /**
      * Constructs <code>Recorded</code> object with <code>participant</code> and <code>record</code>.
-     * Constructed <code>Recorded</code> object is added to <code>Record</code> object and <code>rm</code> object that the constructor got.
+     * Constructed <code>Recorded</code> object is added to <code>record</code>.
      * @param participant a participant of the record 
      * @param record the record that <code>Recorded</code> object represents 
-     * @param rm a record manager that manages the <code>Recorded</code> object
      */
-    public Recorded(User participant, Record record, RecordManager rm) {
+    public Recorded(User participant, Record record) {
         this.participant = participant;
         this.record = record;
 
         record.add(this);
-        rm.addRecorded(this);
     }
 
     /**

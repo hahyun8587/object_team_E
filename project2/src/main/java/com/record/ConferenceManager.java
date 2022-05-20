@@ -1,16 +1,32 @@
 package com.record;
 
-import com.DB.Query;
-import com.std.User;
+import java.util.ArrayList;
 
 /**
  * Class that manages conferences.
  */
 public class ConferenceManager extends RecordManager {
-    @Override
-    public void register(User participant, Record record, RecordManager rm) {
-        sql = Query.getInsertQuery(new Conferenced(participant, (Conference) record, (ConferenceManager) rm));
 
-        _notifyAll();
+    /**
+     * Constructs <code>ConferenceManager</code> object with <code>conferenceds</code>.
+     * @param conferenceds an array list of conferenced 
+     */
+    public ConferenceManager(ArrayList<Recorded> conferenceds) {
+        super(conferenceds);
+    }
+
+    @Override
+    protected Recorded create(String[] args) {
+        return new Conferenced(recordeds.get(0).getParticipant(), new Conference(args[0]));
+    }
+
+    @Override
+    public int registerTo(String id, String[] args) {
+       return mediator.sendRegisteration(id, args, 0);
+    }
+
+    @Override
+    public int deleteFrom(String id, int i) {
+        return mediator.sendDeletion(id, 0, i);
     }
 }
