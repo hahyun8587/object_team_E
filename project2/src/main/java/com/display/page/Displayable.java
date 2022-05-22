@@ -1,4 +1,4 @@
-package com.display;
+package com.display.page;
 
 public interface Displayable {
     public abstract void display();

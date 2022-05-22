@@ -1,4 +1,4 @@
-package com.record;
+package com.record.records;
 
 /**
  * Class that represents conference.

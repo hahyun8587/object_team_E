@@ -3,8 +3,8 @@ package com.DB.loader;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
-import com.record.Record;
-import com.record.Recorded;
+import com.record.records.Record;
+import com.record.records.Recorded;
 
 import java.sql.SQLException;
 

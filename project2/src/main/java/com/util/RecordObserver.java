@@ -1,6 +1,6 @@
 package com.util;
 
-import com.record.RecordManager;
+import com.record.manager.RecordManager;
 
 public interface RecordObserver {
     public abstract void update(RecordManager rm);

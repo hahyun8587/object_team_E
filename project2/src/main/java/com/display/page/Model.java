@@ -1,4 +1,4 @@
-package com.display;
+package com.display.page;
 
 public class Model {
     String title;

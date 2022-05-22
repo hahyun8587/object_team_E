@@ -1,4 +1,4 @@
-package com.display;
+package com.display.page;
 
 //작성자: 허승돈
 

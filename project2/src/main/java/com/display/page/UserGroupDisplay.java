@@ -1,10 +1,11 @@
-package com.display;
+package com.display.page;
 
 // ��µ� ����
 
 import java.awt.GridLayout;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 public class UserGroupDisplay extends FramePage implements Displayable {

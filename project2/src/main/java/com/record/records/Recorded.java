@@ -1,4 +1,4 @@
-package com.record;
+package com.record.records;
 
 import com.std.User;
 

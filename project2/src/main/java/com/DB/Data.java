@@ -2,8 +2,8 @@ package com.DB;
 
 import java.util.ArrayList;
 
+import com.record.records.Recorded;
 import com.std.User;
-import com.record.Recorded;
 import com.util.GlobalVariables;
 
 import java.sql.SQLException;
@@ -43,7 +43,7 @@ public class Data {
             recordeds.add((ArrayList<Recorded>) dao.loadInstance(GlobalVariables.RECORDED_LIST_QUERY[i]));
     }
 
-    public User authenticate() {
+    public void authenticate() {
         /*implement*/
     }
 }

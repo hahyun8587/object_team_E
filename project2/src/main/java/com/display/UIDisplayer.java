@@ -1,5 +1,7 @@
 package com.display;
 
+import com.display.page.Displayable;
+
 /**
  * Class that displays a page.
  */

@@ -1,6 +1,6 @@
 package com.DB;
 
-import com.record.Recorded;
+import com.record.records.Recorded;
 
 public class Query {
     /**

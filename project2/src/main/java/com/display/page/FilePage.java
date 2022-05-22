@@ -1,4 +1,4 @@
-package com.display;
+package com.display.page;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

@@ -3,10 +3,10 @@ package com.DB.loader;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
-import com.record.Record;
-import com.record.Recorded;
-import com.record.Schedule;
-import com.record.Scheduled;
+import com.record.records.Record;
+import com.record.records.Recorded;
+import com.record.records.Schedule;
+import com.record.records.Scheduled;
 
 import java.sql.SQLException;
 

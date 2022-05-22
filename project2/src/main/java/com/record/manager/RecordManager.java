@@ -1,9 +1,12 @@
-package com.record;
+package com.record.manager;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.DB.Query;
+import com.record.records.Recorded;
+import com.record.records.Record;
+import com.record.search.Search;
 import com.util.RecordObserver;
 import com.util.Mediator;
 
@@ -13,16 +16,19 @@ import com.util.Mediator;
  */
 public abstract class RecordManager {
     protected ArrayList<Recorded> recordeds;
-    private ArrayList<RecordObserver> observers;
+    private ArrayList<RecordObserver> observers = new ArrayList<RecordObserver>();
     protected Mediator mediator;
+    private Search searchMethod;
     private String sql;
+    protected int type;
 
     /**
-     * Constructs <code>RecordManager</code>
+     * Constructs a specific record manager with <code>recordeds</code>.
      * @param recordeds
      */
-    public RecordManager(ArrayList<Recorded> recordeds) {
+    public RecordManager(ArrayList<Recorded> recordeds, Mediator mediator) {
         this.recordeds = recordeds;
+        this.mediator = mediator;
     }
 
     public void modify() {
@@ -42,12 +48,14 @@ public abstract class RecordManager {
     }
     
     /**
-     * Adds a specific recorded to user whose id is <code>id</code>.  
-     * @param id an id of user who will be added a specific recorded
+     * Adds a specific recorded to an user's specific record manager whose id is <code>id</code>.  
+     * @param id an id of user whose specific record manager to which its specific record is added
      * @param args arguments used to initialize the specific recorded
      * @return 0 if registeration succeeds, otherwise, -1
      */
-    public abstract int registerTo(String id, String[] args); 
+    public int registerTo(String id, String[] args) {
+        return mediator.sendRegisteration(id, args, type);
+    }
         
     /**
      * Removes an ith specific recorded from array list.
@@ -66,12 +74,22 @@ public abstract class RecordManager {
     }
 
     /**
-     * Removes an ith specific recorded from user whose id is <code>id</code>.
-     * @param id an id of user who will be deleted a specific recorded 
+     * Removes an ith specific recorded from an user's specific record manager whose id is <code>id</code>.
+     * @param id an id of user whose specific record manager from which its specific record is deleted 
      * @param i an index of the recorded to remove
      * @return 0 if deletion succeeds, otherwise, -1
      */
-    public abstract int deleteFrom(String id, int i);
+    public int deleteFrom(String id, int i) {
+        return mediator.sendDeletion(id, type, i);
+    }
+
+    /**
+     * Searches all of the specific condition of records either locally or globally.
+     * @return array list of a specific condition of records
+     */
+    public ArrayList<Record> search() {
+        return searchMethod.search();
+    }
 
     /**
      * Creates a specific recorded using <code>args</code>. 
@@ -91,7 +109,7 @@ public abstract class RecordManager {
     /**
      * Notifies all of the <code>Observer</code> objects in array list.
      */
-    protected void _notifyAll() {
+    private void _notifyAll() {
         Iterator<RecordObserver> it = observers.iterator();
      
         while(it.hasNext())
@@ -99,10 +117,34 @@ public abstract class RecordManager {
     }
 
     /**
-     * Get array list of <code>Recorded</code> object.
-     * @return array list of <code>Recorded</code> object
-     s*/
+     * Gets array list of specific recorded.
+     * @return array list of specific recorded
+     */
     public ArrayList<Recorded> getRecordeds() {
         return recordeds;
+    }
+
+    /**
+     * Gets <code>Mediator</code> object.
+     * @return <code>Mediator</code> object
+     */
+    public Mediator getMediator() {
+        return mediator;
+    }
+
+    /**
+     * Gets type of this record manager.
+     * @return type of this record manager
+     */
+    public int getType() {
+        return type;
+    }
+
+    /**
+     * Sets <code>Search</code> object.
+     * @param searchMethod <code>Search</code> object
+     */
+    public void setSearchMethod(Search searchMethod) {
+        this.searchMethod = searchMethod;
     }
 }

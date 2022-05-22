@@ -1,4 +1,4 @@
-package com.display;
+package com.display.page;
 
 import javax.swing.JFrame;
 import java.awt.Color;

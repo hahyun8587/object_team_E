@@ -2,8 +2,9 @@ package com.util;
 
 import java.util.ArrayList;
 
-import com.record.RecordManager;
-import com.record.Record;
+import com.record.manager.RecordManager;
+import com.record.records.Record;
+import com.record.records.Recorded;
 
 /**
  * Class that mediates managers and managers.
@@ -45,8 +46,18 @@ public class RecordMangerMediator implements Mediator {
     }
 
     @Override
-    public ArrayList<Record> sendAllList() {
-        /*implement*/
+    public ArrayList<Record> sendAllList(int i) {
+        ArrayList<Record> records = new ArrayList<Record>();
+
+        for(RecordManager manager : managers.get(i)) {
+            for(Recorded recorded : manager.getRecordeds()) {
+                Record record = recorded.getRecord();
+
+                if(!records.contains(record))
+                    records.add(record);
+            }
+        }
+        return records;        
     }
 
     private RecordManager findManager(String id, int i) {

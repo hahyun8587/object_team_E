@@ -1,8 +1,10 @@
-package com.display;
+package com.display.page;
 
 import java.awt.event.*;
 import java.awt.Color;
 import javax.swing.*;
+
+import com.display.page.FramePage;
 
 public class LoginPage extends FramePage implements Displayable {
 	private JPanel loginPanel = new JPanel();

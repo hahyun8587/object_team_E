@@ -1,4 +1,4 @@
-package com.display;
+package com.display.page;
 
 import java.awt.*;
 import java.awt.event.*;

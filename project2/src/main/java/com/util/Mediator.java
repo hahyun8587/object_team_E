@@ -2,7 +2,7 @@ package com.util;
 
 import java.util.ArrayList;
 
-import com.record.Record;
+import com.record.records.Record;
 
 /**
  * Interface of mediator.
@@ -26,5 +26,12 @@ public interface Mediator {
      * @return 0 if deletion succeeds, otherwise, -1
      */
     public abstract int sendDeletion(String id, int i, int j);
-    public abstract ArrayList<Record> sendAllList();
+
+    /**
+     * Merges all of the specific recordeds of all of the users.
+     * Duplicates are removed.
+     * @param i an index that indicates a type of recorded
+     * @return array list of merged specific recorded
+     */
+    public abstract ArrayList<Record> sendAllList(int i);
 }

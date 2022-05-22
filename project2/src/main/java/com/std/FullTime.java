@@ -1,13 +1,26 @@
 package com.std;
 
-import com.record.RecordManager;
+import com.record.manager.RecordManager;
 
 public abstract class FullTime extends Rank {
     private String dept;
 
+    /**
+     * Constructs <code>FullTime</code> object with <code>role</code> and <code>dept</code>. 
+     * @param role a role of this user
+     * @param dept a department of the user
+     */
     public FullTime(String role, String dept) {
         super(role);
         this.dept = dept;
+    }
+
+    /**
+     * Registers a specific record to its specific record manager. 
+     * @param args arguments used to initialize a specific recorded 
+     */
+    public void registerRecord(String[] args) {
+        manager.register(args); 
     }
 
     /**
@@ -15,15 +28,7 @@ public abstract class FullTime extends Rank {
      * @param i an index of record to delete
      */
     public void deleteRecord(int i) {   
-        rm.delete(i);
-    }
-
-    public void registerRecord() {
-        /*implement*/
-    }
-
-    public void searchRecord() {
-        /*implement*/
+        manager.delete(i);
     }
 
     public void reserveAlarm() {
@@ -31,10 +36,10 @@ public abstract class FullTime extends Rank {
     }
 
     /**
-     * Sets record manager of <code>FullTime</code> object.
-     * @param rm record manager to set
+     * Sets a specific record manager of <code>FullTime</code> object.
+     * @param i an index of specific record manager to set
      */
-    public void setRecordManager(RecordManager rm) {
-        this.rm = rm;
+    public void setRecordManager(int i) {
+        manager = selector.selectManager(i);
     }
 }

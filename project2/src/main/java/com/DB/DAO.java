@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import com.DB.loader.Loader;
-import com.record.RecordManager;
+import com.record.manager.RecordManager;
 import com.util.RecordObserver;
 import com.util.UserAuthentication;
 import com.util.UserObserver;
