@@ -1,7 +1,5 @@
 package com.std;
 
-import com.record.manager.RecordManager;
-
 public abstract class FullTime extends Rank {
     private String dept;
 
@@ -33,13 +31,5 @@ public abstract class FullTime extends Rank {
 
     public void reserveAlarm() {
         /*implement*/
-    }
-
-    /**
-     * Sets a specific record manager of <code>FullTime</code> object.
-     * @param i an index of specific record manager to set
-     */
-    public void setRecordManager(int i) {
-        manager = selector.selectManager(i);
     }
 }

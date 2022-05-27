@@ -1,20 +1,14 @@
 package com.DB.loader;
 
-import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import com.std.User;
 import com.std.TeamLeader;
 
-public class TeamLeaderLoader extends Loader {
-    private ArrayList<User> users;
-    
+public class TeamLeaderLoader extends Loader { 
     /**
-     * Constructs <code>TeamLeaderLoader with <code>users</code>.
-     * @param users array list of user 
+     * Constructs <code>TeamLeaderLoader with <code>users</code>. 
      */
-    public TeamLeaderLoader(ArrayList<User> users) {
-        this.users = users;
+    public TeamLeaderLoader() {
         name = "TeamLeaderLoader";
     }
     
@@ -22,6 +16,6 @@ public class TeamLeaderLoader extends Loader {
     protected Object initObj(ResultSet rs) throws SQLException{   
         rs.next();
         
-        return new TeamLeader(rs.getString("role"), rs.getString("dept"), users); 
+        return new TeamLeader(rs.getString("role"), rs.getString("dept")); 
     }
 }

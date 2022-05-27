@@ -6,8 +6,8 @@ import java.util.Iterator;
 import com.DB.Query;
 import com.record.records.Recorded;
 import com.record.records.Record;
-import com.record.search.Search;
 import com.util.RecordObserver;
+import com.util.search.RecordSearch;
 import com.util.Mediator;
 
 /**
@@ -18,7 +18,7 @@ public abstract class RecordManager {
     protected ArrayList<Recorded> recordeds;
     private ArrayList<RecordObserver> observers = new ArrayList<RecordObserver>();
     protected Mediator mediator;
-    private Search searchMethod;
+    private RecordSearch searchMethod;
     private String sql;
     protected int type;
 
@@ -144,7 +144,7 @@ public abstract class RecordManager {
      * Sets <code>Search</code> object.
      * @param searchMethod <code>Search</code> object
      */
-    public void setSearchMethod(Search searchMethod) {
+    public void setSearchMethod(RecordSearch searchMethod) {
         this.searchMethod = searchMethod;
     }
 }

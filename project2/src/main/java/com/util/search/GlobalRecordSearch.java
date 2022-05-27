@@ -1,4 +1,4 @@
-package com.record.search;
+package com.util.search;
 
 import java.util.ArrayList;
 
@@ -9,13 +9,13 @@ import com.record.records.Record;
  * Class of primitive decorator that searches all of the records globally.
  * This class is applied decorator design pattern. 
  */
-public class SearchGlobal extends SearchAll {
+public class GlobalRecordSearch extends RecordSearchAll {
     
     /**
      * Constructs <code>SearchGlobal</code> object with <code>manager</code>.
      * @param manager a specific record manager 
      */
-    public SearchGlobal(RecordManager manager) {
+    public GlobalRecordSearch(RecordManager manager) {
         super(manager);
     }
 

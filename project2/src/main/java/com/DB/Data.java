@@ -24,6 +24,8 @@ public class Data {
         this.dao = dao;
     }
 
+    
+
     /**
      * Loads array list of not fully initialized <code>User</code> object.
      * @throws SQLException

@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 import com.record.manager.RecordManager;
 import com.record.records.Record;
-import com.record.search.Search;
 import com.util.Selector;
+import com.util.search.RecordSearch;
 
 /**
  * Class that represents rank of user.
  */
-public class Rank {
+public abstract class Rank {
     private String role;
     protected RecordManager manager;
-    protected Selector selector;
+    private Selector selector;
 
     /**
-     * Constructs a <code>Rank</code> object with <code>role</code>.
+     * Constructs <code>Rank</code> object with <code>role</code>.
      * @param role a role of this rank 
      */
     public Rank(String role) {
@@ -27,7 +27,19 @@ public class Rank {
         /*implement*/
     }
 
-    public void searchRecord(Search searchMethod) {
-        /*implement*/
+    public ArrayList<Record> searchRecord(RecordSearch searchMethod) {
+        manager.setSearchMethod(searchMethod);
+        
+        return manager.search();
     }
+
+    /**
+     * Sets a specific record manager of <code>FullTime</code> object.
+     * @param i an index of specific record manager to set
+     */
+    public void setRecordManager(int i) {
+        manager = selector.selectManager(i);
+    }
+
+
 }
