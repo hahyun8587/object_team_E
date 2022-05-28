@@ -34,6 +34,14 @@ public abstract class Rank {
     }
 
     /**
+     * Sets selector of <code>FullTime</code> object.
+     * @param selector <code>Selector</code> object
+     */
+    public void setSelector(Selector selector) {
+        this.selector = selector;
+    }
+
+    /**
      * Sets a specific record manager of <code>FullTime</code> object.
      * @param i an index of specific record manager to set
      */

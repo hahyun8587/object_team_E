@@ -3,10 +3,11 @@ package com.util;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.DB.DAO;
 import com.std.User;
 
 /**
- * Class that authenticate user.
+ * Class that authenticates user.
  */
 public class UserAuthentication {
     private ArrayList<User> users;
@@ -14,10 +15,10 @@ public class UserAuthentication {
     private String sql;
 
     /**
-     * Constructs a <code>UserAuthentication</code> with <code>users</code>
+     * Constructs <code>UserAuthentication</code> object with <code>users</code>
      * @param users arraylist of users
      */
-    public UserAuthentication(ArrayList<User> users) {
+    public UserAuthentication(DAO dao) {
         this.users = users;
     }
 
@@ -40,7 +41,7 @@ public class UserAuthentication {
     }
 
     public void addUser(User user) {
-
+        /*implement*/
     }
 
     public void _notify() {

@@ -13,7 +13,7 @@ public interface Builder {
      * @param manager a specific record manager to add
      * @return a specific builder object
      */
-    public abstract Builder add(RecordManager manager);
+    public abstract Builder addManager(RecordManager manager);
     
     /**
      * Builds <code>User</code> object with the arguments setted.
