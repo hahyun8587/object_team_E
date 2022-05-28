@@ -3,7 +3,6 @@ package com.util;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.DB.DAO;
 import com.std.User;
 
 /**
@@ -18,7 +17,7 @@ public class UserAuthentication {
      * Constructs <code>UserAuthentication</code> object with <code>users</code>
      * @param users arraylist of users
      */
-    public UserAuthentication(DAO dao) {
+    public UserAuthentication(ArrayList<User> users) {
         this.users = users;
     }
 
