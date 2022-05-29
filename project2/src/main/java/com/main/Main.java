@@ -49,7 +49,7 @@ public class Main {
             ud.setPage(new MainPage()); //HSD: In order to print out the list of members from the member management page, the ua is passed to the main page.
             ud.displayPage();
 
-            dao.close();
+//            dao.close(); //praise garbege collector is working here
         } catch(SQLException e) {
             e.printStackTrace();
         } catch(PatternSyntaxException e) {

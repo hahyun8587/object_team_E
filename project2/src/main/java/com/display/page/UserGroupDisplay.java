@@ -1,6 +1,6 @@
 package com.display.page;
 
-// ��µ� ����
+// 작성자: 허승돈
 
 import java.awt.GridLayout;
 
@@ -20,7 +20,7 @@ public class UserGroupDisplay extends FramePage implements Displayable {
 		groupList = new JComboBox<String>();
 		this.add("Center",groupList);
 		
-		selectBtn = new JButton("����");
+		selectBtn = new JButton("그룹별 사용자 조회");
 		this.add("South",selectBtn);
 	}
 

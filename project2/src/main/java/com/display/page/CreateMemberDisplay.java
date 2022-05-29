@@ -13,7 +13,7 @@ public class CreateMemberDisplay extends JFrame implements Displayable {
 	private JButton confirmBtn;
 	private JButton cancelBtn;
 	private JPanel textPnl, btnPnl;
-	public CreateMemberDisplay()
+	public CreateMemberDisplay(MemberManagePage mp)
 	{
 		setTitle("Add Member Manager");
 		setSize(300,400);
@@ -34,11 +34,14 @@ public class CreateMemberDisplay extends JFrame implements Displayable {
 		btnPnl.add(cancelBtn);
 		add("South",btnPnl);
 
-		// confirmBtn.addActionListener(new ActionListener(){
-		// 	public void actionPerformed(ActionEvent e){
-				
-		// 	}
-		// });
+		confirmBtn.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				String content[] = new String[2];
+				content[0] = field[0].getText();
+				content[1] = field[2].getText();
+				mp.createmember(content);
+			}
+		});
 	}
 
 	public void display() {
