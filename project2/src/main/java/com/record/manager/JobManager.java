@@ -6,6 +6,7 @@ import com.record.records.Assigned;
 import com.record.records.Job;
 import com.record.records.Recorded;
 import com.util.Mediator;
+import com.util.RecordObserver;
 
 /**
  * Class that manages jobs.
@@ -14,11 +15,14 @@ import com.util.Mediator;
 public class JobManager extends RecordManager {
     
     /**
-     * Constructs <code>JobManager</code> object with <code>assigneds</code>.
+     * Constructs <code>JobManager</code> object with <code>assigneds</code>, <code>mediator</code>, and <code>observers</code>.
      * @param assigneds an array list of assigned 
+     * @param mediator <code>Mediator</code> object
+     * @param observer array list of a specific record observer
      */
-    public JobManager(ArrayList<Recorded> assigneds, Mediator mediator) {
-       super(assigneds, mediator);
+    public JobManager(ArrayList<Recorded> assigneds, Mediator mediator, ArrayList<RecordObserver> observers) {
+       super(assigneds, mediator, observers);
+       
        type = 1;
     }
 

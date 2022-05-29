@@ -3,6 +3,7 @@ package com.DB.loader;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
+import com.util.GlobalVariables;
 import com.record.records.Record;
 import com.record.records.Recorded;
 import com.record.records.Schedule;
@@ -22,7 +23,9 @@ public class ScheduledListLoader extends RecordedListLoader {
      */
     public ScheduledListLoader(ArrayList<User> users) {
         super(users);
+        
         name = "ScheduledListLoader";
+        sql = GlobalVariables.SCHEDULED_LIST_QUERY;
     }
 
     @Override

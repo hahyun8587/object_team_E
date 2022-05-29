@@ -3,6 +3,7 @@ package com.DB.loader;
 import java.sql.ResultSet;
 
 import com.std.PartTime;
+import com.util.GlobalVariables;
 
 import java.sql.SQLException;
 
@@ -15,6 +16,7 @@ public class PartTimeLoader extends Loader {
      */
     public PartTimeLoader() {
         name = "PartTimeLoader";
+        sql = GlobalVariables.PARTTIME_QUERY;
     }
 
     @Override

@@ -16,19 +16,20 @@ import com.util.Mediator;
  */
 public abstract class RecordManager {
     protected ArrayList<Recorded> recordeds;
-    private ArrayList<RecordObserver> observers = new ArrayList<RecordObserver>();
     protected Mediator mediator;
+    protected int type;
+    private ArrayList<RecordObserver> observers;
     private RecordSearch searchMethod;
     private String sql;
-    protected int type;
 
     /**
      * Constructs a specific record manager with <code>recordeds</code>.
      * @param recordeds
      */
-    public RecordManager(ArrayList<Recorded> recordeds, Mediator mediator) {
+    public RecordManager(ArrayList<Recorded> recordeds, Mediator mediator, ArrayList<RecordObserver> observers) {
         this.recordeds = recordeds;
         this.mediator = mediator;
+        this.observers = observers;
     }
 
     public void modify() {
@@ -103,6 +104,9 @@ public abstract class RecordManager {
      * @param observer an <code>Observer</code> object to add
      */
     public void attach(RecordObserver observer) {
+        if(observers == null)
+            observers = new ArrayList<RecordObserver>();
+        
         observers.add(observer);
     }
 

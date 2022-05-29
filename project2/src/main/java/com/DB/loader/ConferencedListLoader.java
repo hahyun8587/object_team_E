@@ -3,6 +3,7 @@ package com.DB.loader;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
+import com.util.GlobalVariables;
 import com.record.records.Conference;
 import com.record.records.Conferenced;
 import com.record.records.Record;
@@ -22,7 +23,9 @@ public class ConferencedListLoader extends RecordedListLoader {
      */
     public ConferencedListLoader(ArrayList<User> users) {
         super(users);
+        
         name = "ConferencedListLoader";
+        sql = GlobalVariables.CONFERENCED_LIST_QUERY;
     }
 
     @Override

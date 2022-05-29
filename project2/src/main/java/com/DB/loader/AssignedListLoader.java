@@ -3,6 +3,7 @@ package com.DB.loader;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import com.std.User;
+import com.util.GlobalVariables;
 import com.record.records.Assigned;
 import com.record.records.Job;
 import com.record.records.Record;
@@ -22,7 +23,9 @@ public class AssignedListLoader extends RecordedListLoader {
      */
     public AssignedListLoader(ArrayList<User> users) {
         super(users);
+        
         name = "AssignedListLoader";
+        sql = GlobalVariables.ASSIGNED_LIST_QUERY;
     }
 
     @Override

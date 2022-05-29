@@ -3,6 +3,7 @@ package com.DB.loader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.std.TeamLeader;
+import com.util.GlobalVariables;
 
 public class TeamLeaderLoader extends Loader { 
     /**
@@ -10,6 +11,7 @@ public class TeamLeaderLoader extends Loader {
      */
     public TeamLeaderLoader() {
         name = "TeamLeaderLoader";
+        sql = GlobalVariables.FULLTIME_QUERY;
     }
     
     @Override

@@ -6,6 +6,7 @@ import com.record.records.Recorded;
 import com.record.records.Schedule;
 import com.record.records.Scheduled;
 import com.util.Mediator;
+import com.util.RecordObserver;
 
 /**
  * Class that manages schedules.
@@ -13,11 +14,14 @@ import com.util.Mediator;
 public class ScheduleManager extends RecordManager {
 
     /**
-     * Constructs <code>ScheduleManager</code> object with <code>scheduleds</code>.
-     * @param conferenceds an array list of scheduled 
+     * Constructs <code>ScheduleManager</code> object with <code>scheduleds</code>, <code>mediator</code>, and <code>observers</code>.
+     * @param conferenceds array list of scheduled 
+     * @param mediator <code>Mediator</code> object
+     * @param observer array list of a specific record obeserver
      */
-    public ScheduleManager(ArrayList<Recorded> scheduleds, Mediator mediator) {
-        super(scheduleds, mediator);
+    public ScheduleManager(ArrayList<Recorded> scheduleds, Mediator mediator, ArrayList<RecordObserver> observers) {
+        super(scheduleds, mediator, observers);
+        
         type = 2;
     }
 

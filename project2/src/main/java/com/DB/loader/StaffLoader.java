@@ -3,6 +3,7 @@ package com.DB.loader;
 import java.sql.ResultSet;
 
 import com.std.Staff;
+import com.util.GlobalVariables;
 
 import java.sql.SQLException;
 
@@ -15,6 +16,7 @@ public class StaffLoader extends Loader {
      */
     public StaffLoader() {
         name = "StaffLoader";
+        sql = GlobalVariables.FULLTIME_QUERY;
     }
 
     @Override

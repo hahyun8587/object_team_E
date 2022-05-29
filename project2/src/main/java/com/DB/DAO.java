@@ -12,7 +12,6 @@ import com.util.UserObserver;
 import com.util.GlobalVariables;
 
 import java.sql.SQLException;
-import java.util.regex.PatternSyntaxException;
 
 /**
  * Data Access Object class that access mysql database.
@@ -60,13 +59,12 @@ public class DAO implements RecordObserver, UserObserver {
 
     /**
      * Loads specific object from database by using <code>Loader</code>.
-     * @param sql a sql query to execute
      * @param arg an argument that used for initializing specific object
      * @return specific object
      * @throws SQLException
      */
-    public Object loadInstance(String sql) throws SQLException {
-        return loader.load(pstmt, sql);
+    public Object loadInstance() throws SQLException {
+        return loader.load(pstmt);
     }
 
     /**

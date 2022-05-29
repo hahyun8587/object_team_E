@@ -10,14 +10,14 @@ import com.record.records.Recorded;
  * Class that mediates managers and managers.
  * This class is applied mediator design pattern.
  */
-public class RecordMangerMediator implements Mediator {
-    private ArrayList<ArrayList<RecordManager>> managers;
+public class RecordManagerMediator implements Mediator {
+    private ArrayList<RecordManager>[] managers;
 
     /**
      * Constructs <code>Mediator</code> object with <code>managers</code>.
      * @param managers array list of array list of record manger
      */
-    public RecordMangerMediator(ArrayList<ArrayList<RecordManager>> managers) {
+    public RecordManagerMediator(ArrayList<RecordManager>[] managers) {
         this.managers = managers;
     }
     
@@ -49,7 +49,7 @@ public class RecordMangerMediator implements Mediator {
     public ArrayList<Record> sendAllList(int i) {
         ArrayList<Record> records = new ArrayList<Record>();
 
-        for(RecordManager manager : managers.get(i)) {
+        for(RecordManager manager : managers[i]) {
             for(Recorded recorded : manager.getRecordeds()) {
                 Record record = recorded.getRecord();
 
@@ -61,7 +61,7 @@ public class RecordMangerMediator implements Mediator {
     }
 
     private RecordManager findManager(String id, int i) {
-        for(RecordManager manager : managers.get(i)) {
+        for(RecordManager manager : managers[i]) {
             if(id.equals(manager.getRecordeds().get(0).getParticipant().getId()))
                 return manager;
         }

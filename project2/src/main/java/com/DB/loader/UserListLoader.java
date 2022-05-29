@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.sql.ResultSet;
 
 import com.std.User;
+import com.util.GlobalVariables;
 
 import java.sql.SQLException;
 
@@ -17,6 +18,7 @@ public class UserListLoader extends Loader {
      */
     public UserListLoader() {
         name = "UserListLoader";
+        sql = GlobalVariables.USER_LIST_QUERY;
     }
 
     @Override

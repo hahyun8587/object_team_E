@@ -26,7 +26,7 @@ public class Main {
 
             dao.setLoader(new UserListLoader());
             
-            ua = new UserAuthentication((ArrayList<User>) dao.loadInstance(GlobalVariables.USER_LIST_QUERY));
+            ua = new UserAuthentication((ArrayList<User>) dao.loadInstance());
             ud = new UIDisplayer();
 
             ud.setPage(lp = new LoginPage());

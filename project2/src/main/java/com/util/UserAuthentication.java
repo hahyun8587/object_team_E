@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.std.User;
+import com.std.Rank;
 
 /**
  * Class that authenticates user.
@@ -14,8 +15,8 @@ public class UserAuthentication {
     private String sql;
 
     /**
-     * Constructs <code>UserAuthentication</code> object with <code>users</code>
-     * @param users arraylist of users
+     * Constructs <code>UserAuthentication</code> object with <code>dao</code>
+     * @param DAO
      */
     public UserAuthentication(ArrayList<User> users) {
         this.users = users;

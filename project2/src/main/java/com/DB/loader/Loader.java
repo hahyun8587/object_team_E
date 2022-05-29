@@ -10,16 +10,16 @@ import java.sql.SQLException;
  */
 public abstract class Loader {  
     protected String name;
+    protected String sql;
 
     /**
      * Template method that loads specific object from database.
      * 
      * @param pstmt the <code>PreparedStatement</code> object that linked with database
-     * @param sql a sql query to execute
      * @throws SQLException 
      * @return specific object
      */
-    public Object load(PreparedStatement pstmt, String sql) throws SQLException {
+    public Object load(PreparedStatement pstmt) throws SQLException {
         ResultSet rs = pstmt.executeQuery(sql);
         Object obj = initObj(rs);
 
