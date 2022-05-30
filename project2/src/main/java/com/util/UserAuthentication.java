@@ -1,5 +1,6 @@
 package com.util;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -43,7 +44,11 @@ public class UserAuthentication {
         /*implement*/
     }
 
-    public void _notify() {
+    public void deleteUser(User user){
+        /*implement*/
+    }
+
+    public void _notify() throws SQLException {
         observer.update(this);
     }
 
@@ -53,5 +58,13 @@ public class UserAuthentication {
      */
     public ArrayList<User> getUsers() {
         return users;
+    }
+
+    /**
+     * Gets a sql query for deleting or adding user.
+     * @return a sql query for deleting or adding user
+     */
+    public String getSql() {
+        return sql;
     }
 }

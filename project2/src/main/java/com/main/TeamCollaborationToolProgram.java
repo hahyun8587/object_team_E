@@ -27,6 +27,9 @@ public class TeamCollaborationToolProgram {
         this.dao = dao;
     }
 
+    /**
+     * Loads all of the data from database.
+     */
     public void ready() {
         ArrayList<User> users = null;
 

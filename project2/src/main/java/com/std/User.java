@@ -29,6 +29,10 @@ public class User {
         /*implement*/
     }
 
+    public void signOut() {
+        /*implement*/
+    }
+
     /**
      * Gives <code>User</code> object by using <code>id</code> and <code>pw</code>.
      * Gives <code>null</code> if login fails.

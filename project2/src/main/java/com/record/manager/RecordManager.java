@@ -1,5 +1,6 @@
 package com.record.manager;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -39,8 +40,9 @@ public abstract class RecordManager {
     /**
      * Add a specific recorded to array list by using <code>args</code>. 
      * @param args arguments used to initialize a specific recorded 
+     * @throws SQLException
      */
-    public void register(String[] args) {
+    public void register(String[] args) throws SQLException {
         Recorded recorded = create(args);
         sql = Query.getInsertQuery(recorded);
 
@@ -53,8 +55,9 @@ public abstract class RecordManager {
      * @param id an id of user whose specific record manager to which its specific record is added
      * @param args arguments used to initialize the specific recorded
      * @return 0 if registeration succeeds, otherwise, -1
+     * @throws SQLException
      */
-    public int registerTo(String id, String[] args) {
+    public int registerTo(String id, String[] args) throws SQLException {
         return mediator.sendRegisteration(id, args, type);
     }
         
@@ -63,8 +66,9 @@ public abstract class RecordManager {
      * The <code>Recorded</code> object is also removed from <code>Record</code> object's vector.
      * Sql query for deleting certain record is assigned to <code>sql</code>.
      * @param i an index of recorded to remove
+     * @throws SQLException
      */
-    public void delete(int i) {
+    public void delete(int i) throws SQLException {
         Recorded recorded = recordeds.get(i);
         
         sql = Query.getDeleteQuery(recorded);
@@ -79,8 +83,9 @@ public abstract class RecordManager {
      * @param id an id of user whose specific record manager from which its specific record is deleted 
      * @param i an index of the recorded to remove
      * @return 0 if deletion succeeds, otherwise, -1
+     * @throws SQLException
      */
-    public int deleteFrom(String id, int i) {
+    public int deleteFrom(String id, int i) throws SQLException {
         return mediator.sendDeletion(id, type, i);
     }
 
@@ -112,8 +117,9 @@ public abstract class RecordManager {
 
     /**
      * Notifies all of the <code>Observer</code> objects in array list.
+     * @throws SQLException
      */
-    private void _notifyAll() {
+    private void _notifyAll() throws SQLException {
         Iterator<RecordObserver> it = observers.iterator();
      
         while(it.hasNext())
@@ -142,6 +148,14 @@ public abstract class RecordManager {
      */
     public int getType() {
         return type;
+    }
+
+    /**
+     * Gets a sql query for deleting or adding record.
+     * @return a sql query for deleting or adding record
+     */
+    public String getSql() {
+        return sql;
     }
 
     /**

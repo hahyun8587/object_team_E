@@ -2,14 +2,12 @@ package com.DB;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 
 import com.DB.loader.Loader;
 import com.record.manager.RecordManager;
 import com.util.RecordObserver;
 import com.util.UserAuthentication;
 import com.util.UserObserver;
-import com.util.GlobalVariables;
 
 import java.sql.SQLException;
 
@@ -75,13 +73,13 @@ public class DAO implements RecordObserver, UserObserver {
     }
 
     @Override
-    public void update(RecordManager rm) {
-        /*implement*/
+    public void update(RecordManager manager) throws SQLException {
+        saver.save(conn, manager.getSql());
     }
 
     @Override
-    public void update(UserAuthentication ua) {
-        /*implement*/   
+    public void update(UserAuthentication ua) throws SQLException {
+        saver.save(conn, ua.getSql());
     }
 
     /**

@@ -9,6 +9,7 @@ import com.record.records.Record;
  * This class is applied decorator design pattern.
  */
 public abstract class RecordSearch {
+    
     /**
      * Searchs specific condition of records.
      * @return array list of a specific condition of record

@@ -1,5 +1,7 @@
 package com.std;
 
+import java.sql.SQLException;
+
 public abstract class FullTime extends Rank {
     private String dept;
 
@@ -16,17 +18,19 @@ public abstract class FullTime extends Rank {
 
     /**
      * Registers a specific record to its specific record manager. 
-     * @param args arguments used to initialize a specific recorded 
+     * @param args arguments used to initialize a specific recorded
+     * @throws SQLException 
      */
-    public void registerRecord(String[] args) {
+    public void registerRecord(String[] args) throws SQLException {
         manager.register(args); 
     }
 
     /**
      * Deletes ith record.
      * @param i an index of record to delete
+     * @throws SQLException
      */
-    public void deleteRecord(int i) {   
+    public void deleteRecord(int i) throws SQLException {   
         manager.delete(i);
     }
 

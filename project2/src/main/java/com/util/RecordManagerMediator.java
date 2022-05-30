@@ -6,6 +6,8 @@ import com.record.manager.RecordManager;
 import com.record.records.Record;
 import com.record.records.Recorded;
 
+import java.sql.SQLException;
+
 /**
  * Class that mediates managers and managers.
  * This class is applied mediator design pattern.
@@ -22,7 +24,7 @@ public class RecordManagerMediator implements Mediator {
     }
     
     @Override
-    public int sendRegisteration(String id, String[] args, int i) {
+    public int sendRegisteration(String id, String[] args, int i) throws SQLException{
         RecordManager manager = findManager(id, i);
 
         if(manager == null)
@@ -34,7 +36,7 @@ public class RecordManagerMediator implements Mediator {
     } 
 
     @Override
-    public int sendDeletion(String id, int i, int j) {
+    public int sendDeletion(String id, int i, int j) throws SQLException {
         RecordManager manager = findManager(id, i);
         
         if(manager == null)
