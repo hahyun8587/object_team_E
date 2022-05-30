@@ -39,7 +39,7 @@ public class CreateMemberDisplay extends JFrame implements Displayable {
 				String content[] = new String[2];
 				content[0] = field[0].getText();
 				content[1] = field[2].getText();
-				mp.createmember(content);
+				//mp.createmember(content);
 			}
 		});
 	}

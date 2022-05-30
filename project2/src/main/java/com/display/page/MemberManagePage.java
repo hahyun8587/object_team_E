@@ -44,7 +44,7 @@ public class MemberManagePage extends JFrame implements Displayable {
 			dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL,GlobalVariables.ID, GlobalVariables.PASSWORD);
 
             dao.setLoader(new UserListLoader());
-			ua = new UserAuthentication((ArrayList<User>) dao.loadInstance(GlobalVariables.USER_LIST_QUERY));
+			ua = new UserAuthentication((ArrayList<User>) dao.loadInstance());
 
 			content = new String[ua.getUsers().size()][2];
 			for(int i=0;i<content.length;i++){
