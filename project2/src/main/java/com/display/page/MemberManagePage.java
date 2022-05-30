@@ -12,13 +12,15 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.*;
 
-import java.util.ArrayList;
-
 import java.util.regex.PatternSyntaxException;
 import java.sql.SQLException;
 
+import java.util.ArrayList;
+import java.lang.Thread;
 import com.DB.*;
+import com.DB.loader.*;
 import com.display.*;
+import com.display.page.*;
 import com.std.*;
 import com.util.*;
 
@@ -30,32 +32,44 @@ public class MemberManagePage extends JFrame implements Displayable {
 	private JPanel buttonPanel;
 	private JButton usergroupbutton;
 	private JButton creatememberbutton;
-	private String content[][];
-	private UserAuthentication uat;
-	
-	public MemberManagePage(){
-		/** 
-		content = new String[ua.getUsers().size()][2];
-		uat = ua;
+	private String[][] content;
+	private UserAuthentication ua;
+	private DAO dao;
+	private MemberManagePage mp;
+	private DefaultTableModel tableModel;
 
-		for(int i=0;i<ua.getUsers().size();i++)
-		{
-			content[i][0] = ua.getUsers().get(i).getId();
-			content[i][1] = ua.getUsers().get(i).getName();
-//			content[i][1] = "HurSeungDon";
-//			content[i][2] = ua.getUsers().get(i).rank.getRank();
-//			content[i][2] = "TeamLeader";
-		}
-		**/
+	public MemberManagePage(){
 		
+		try{
+			dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL,GlobalVariables.ID, GlobalVariables.PASSWORD);
+
+            dao.setLoader(new UserListLoader());
+			ua = new UserAuthentication((ArrayList<User>) dao.loadInstance(GlobalVariables.USER_LIST_QUERY));
+
+			content = new String[ua.getUsers().size()][2];
+			for(int i=0;i<content.length;i++){
+				content[i][0] = ua.getUsers().get(i).getId();
+				content[i][1] = ua.getUsers().get(i).getName();
+			}
+//			dao.close();
+		}
+		catch(SQLException e) {
+            e.printStackTrace();
+        } catch(PatternSyntaxException e) {
+            e.printStackTrace();
+        } catch(ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch(NullPointerException e) {
+            e.printStackTrace();
+        }
 		setTitle("User Manager");
 		setSize(1200,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new GridLayout(1,2));
 		
-//		DefaultTableModel tableModel = new DefaultTableModel(column,0);
+		tableModel = new DefaultTableModel(content, column);
 		
-		manageuser = new JTable(content,column);
+		manageuser = new JTable(tableModel);
 		manageuser.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		
 		scrolledTable = new JScrollPane(manageuser);
@@ -69,6 +83,7 @@ public class MemberManagePage extends JFrame implements Displayable {
 		buttonPanel.add(creatememberbutton);
 		this.add(buttonPanel);
 		
+		mp = this;
 		usergroupbutton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				new UserGroupDisplay().display();
@@ -76,14 +91,14 @@ public class MemberManagePage extends JFrame implements Displayable {
 		});
 		creatememberbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new CreateMemberDisplay().display();
+				new CreateMemberDisplay(mp).display();
 			}
 		});
 	}
 	
-	// public void createmember(){
-		
-	// }
+	 public void createmember(String[] str){
+		tableModel.addRow(str);
+	 }
 
 	public void display() {
 		setVisible(true);
