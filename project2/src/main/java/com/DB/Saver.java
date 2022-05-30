@@ -1,6 +1,6 @@
 package com.DB;
 
-import java.sql.PreparedStatement;
+import java.sql.Connection;
 
 import java.sql.SQLException;
 
@@ -14,7 +14,7 @@ public class Saver {
      * @param sql a sql query to execute
      * @throws SQLException
      */
-    public void save(PreparedStatement pstmt, String sql) throws SQLException {
-        pstmt.executeUpdate(sql);
+    public void save(Connection conn, String sql) throws SQLException {
+        conn.prepareStatement(sql).executeUpdate();
     } 
 }

@@ -9,6 +9,7 @@ public class User {
     private String id;
     private String pw;
     private String name;
+    private String rankName;
     public Rank rank; 
 
     /**
@@ -17,10 +18,11 @@ public class User {
      * @param pw password of user
      * @param name name of user
      */
-    public User(String id, String pw, String name) {
+    public User(String id, String pw, String name, String rankName) {
         this.id = id;
         this.pw = pw;
         this.name = name;
+        this.rankName = rankName;
     }
 
     public static synchronized void signUp() {
@@ -76,7 +78,7 @@ public class User {
     }
     
     /**
-     * Gets id from <code>User</code> object.
+     * Gets id of user from <code>User</code> object.
      * @return id of user
      */
     public String getId() {
@@ -84,14 +86,26 @@ public class User {
     }
 
     /**
-     * Gets password from <code>User</code> object.
+     * Gets password of user from <code>User</code> object.
      * @return password of user
      */
     public String getPw() {
         return pw;
     }
 
-    public String getName(){ // HSD: Get Name to display the name from displayer
+    /**
+     * Gets name of user from <code>User</code> object.
+     * @return name of user
+     */
+    public String getName() { 
         return name;
+    }
+
+    /**
+     * Gets rank name of user from <code>User</code> object. 
+     * @return rank name of user
+     */
+    public String getRankName() {
+        return rankName;
     }
 }

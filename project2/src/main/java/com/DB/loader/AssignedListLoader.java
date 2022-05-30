@@ -23,8 +23,7 @@ public class AssignedListLoader extends RecordedListLoader {
      */
     public AssignedListLoader(ArrayList<User> users) {
         super(users);
-        
-        name = "AssignedListLoader";
+    
         sql = GlobalVariables.ASSIGNED_LIST_QUERY;
     }
 

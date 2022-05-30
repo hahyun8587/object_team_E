@@ -5,12 +5,11 @@ import java.sql.SQLException;
 import com.std.TeamLeader;
 import com.util.GlobalVariables;
 
-public class TeamLeaderLoader extends Loader { 
+public class TeamLeaderLoader extends RankLoader { 
     /**
      * Constructs <code>TeamLeaderLoader with <code>users</code>. 
      */
     public TeamLeaderLoader() {
-        name = "TeamLeaderLoader";
         sql = GlobalVariables.FULLTIME_QUERY;
     }
     

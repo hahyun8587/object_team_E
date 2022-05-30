@@ -1,6 +1,7 @@
 package com.DB.loader;
 
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import com.std.User;
 import com.record.records.Record;
@@ -9,7 +10,7 @@ import com.record.records.Recorded;
 import java.sql.SQLException;
 
 /**
- * Abstract class that loads array list of <code>RecordManager</code> object.
+ * Abstract class that loads array list of a specific recorded.
  * This class is applied template design pattern.
  */
 public abstract class RecordedListLoader extends Loader {
@@ -21,8 +22,10 @@ public abstract class RecordedListLoader extends Loader {
      */
     public RecordedListLoader(ArrayList<User> users) {
         this.users = users;
-        name = "RecordedListLoader";
     }
+
+    @Override
+    protected void prepare(PreparedStatement pstmt) {}
 
     @Override
     protected Object initObj(ResultSet rs) throws SQLException {

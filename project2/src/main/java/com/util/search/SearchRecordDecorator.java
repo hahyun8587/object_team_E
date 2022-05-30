@@ -1,5 +1,14 @@
 package com.util.search;
 
-public class SearchRecordDecorator {
+
+public abstract class SearchRecordDecorator extends RecordSearch {
     
+    private RecordSearch searchMethod;
+
+    
+
+
+
+
+
 }

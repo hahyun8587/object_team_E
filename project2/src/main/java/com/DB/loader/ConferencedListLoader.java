@@ -24,7 +24,6 @@ public class ConferencedListLoader extends RecordedListLoader {
     public ConferencedListLoader(ArrayList<User> users) {
         super(users);
         
-        name = "ConferencedListLoader";
         sql = GlobalVariables.CONFERENCED_LIST_QUERY;
     }
 

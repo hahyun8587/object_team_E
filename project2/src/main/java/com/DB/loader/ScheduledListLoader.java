@@ -23,8 +23,7 @@ public class ScheduledListLoader extends RecordedListLoader {
      */
     public ScheduledListLoader(ArrayList<User> users) {
         super(users);
-        
-        name = "ScheduledListLoader";
+    
         sql = GlobalVariables.SCHEDULED_LIST_QUERY;
     }
 

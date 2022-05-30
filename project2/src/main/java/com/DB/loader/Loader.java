@@ -1,5 +1,6 @@
 package com.DB.loader;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +10,6 @@ import java.sql.SQLException;
  * This class is applied template design pattern.
  */
 public abstract class Loader {  
-    protected String name;
     protected String sql;
 
     /**
@@ -19,14 +19,30 @@ public abstract class Loader {
      * @throws SQLException 
      * @return specific object
      */
-    public Object load(PreparedStatement pstmt) throws SQLException {
-        ResultSet rs = pstmt.executeQuery(sql);
-        Object obj = initObj(rs);
+    public Object load(Connection conn) throws SQLException {
+        PreparedStatement pstmt;
+        ResultSet rs; 
+        Object obj; 
+
+        pstmt = conn.prepareStatement(sql);
+        
+        prepare(pstmt);
+        
+        rs = pstmt.executeQuery();
+        obj = initObj(rs);
 
         rs.close();
+        pstmt.close();
 
         return obj;
     }
+
+    /**
+     * Prepares a statement for executing query.
+     * @param pstmt <code>PreparedStatement</code> object
+     * @throws SQLException
+     */
+    protected abstract void prepare(PreparedStatement pstmt) throws SQLException;
 
     /**
      * Primitive method that initializes specific object.
@@ -34,5 +50,6 @@ public abstract class Loader {
      * @throws SQLException
      * @return specific object
      */
-    protected abstract Object initObj(ResultSet rs) throws SQLException;   
+    protected abstract Object initObj(ResultSet rs) throws SQLException;  
+    
 }

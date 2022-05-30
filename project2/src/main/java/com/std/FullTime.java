@@ -10,6 +10,7 @@ public abstract class FullTime extends Rank {
      */
     public FullTime(String role, String dept) {
         super(role);
+        
         this.dept = dept;
     }
 

@@ -22,7 +22,6 @@ public class DAO implements RecordObserver, UserObserver {
     private Loader loader;
     private Saver saver = new Saver();
     private Connection conn;
-    private PreparedStatement pstmt;
 
     /**
      * Constructs a <code>DAO</code> object with given <code>driver</code>, <code>url</code>, <code>id</code>, <code>pw</code>.
@@ -37,7 +36,6 @@ public class DAO implements RecordObserver, UserObserver {
         Class.forName(driver);
 
         conn = DriverManager.getConnection(url, id, pw);
-        pstmt = conn.prepareStatement(GlobalVariables.USER_LIST_QUERY);
     }      
 
     /**
@@ -64,7 +62,7 @@ public class DAO implements RecordObserver, UserObserver {
      * @throws SQLException
      */
     public Object loadInstance() throws SQLException {
-        return loader.load(pstmt);
+        return loader.load(conn);
     }
 
     /**
@@ -73,7 +71,7 @@ public class DAO implements RecordObserver, UserObserver {
      * @throws SQLException
      */
     public void saveData(String sql) throws SQLException {
-        saver.save(pstmt, sql);
+        saver.save(conn, sql);
     }
 
     @Override
@@ -92,11 +90,6 @@ public class DAO implements RecordObserver, UserObserver {
      */
     public void close() throws SQLException {
         conn.close();
-        pstmt.close();
-    }
-    
-    public PreparedStatement getPstmt() {
-        return pstmt;
     }
 
     public void setLoader(Loader loader) {
