@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import com.std.User;
+
 public class View implements Displayable {
 	String[] options = {"Staff", "PartTime", "TeamLeader"};
 	
@@ -17,13 +19,16 @@ public class View implements Displayable {
     JTextField t3 = new JTextField();
     JTextField t4 = new JTextField();
     JTextArea ta = new JTextArea();
-    JButton btn1, btn2, btn3, btn4, btn5;
+    JButton btn1, btn2, btn3, btn4, btn5, back;
     JLabel ㅣ1 = new JLabel("회의제목 : ");
     JLabel ㅣ2 = new JLabel("참여 : ");
     JLabel ㅣ3 = new JLabel("회의날짜 : ");
     JLabel ㅣ4 = new JLabel("검색내용 : ");
-
-    View() {
+    
+    User user;
+    
+    View(User user) {
+        this.user = user;
         GUI_init();
     }
 
@@ -73,6 +78,13 @@ public class View implements Displayable {
 
         jpanel.add(btn5 = new JButton("검색"));
         btn5.setBounds(300, 100, 80, 30);
+
+        jpanel.add(back = new JButton("뒤로가기"));
+        back.setBounds(50, 100, 80, 30);
+
+        back.addActionListener(new moveActionListener());
+
+
 
 //        Controller dao = new Controller();
 
@@ -173,4 +185,12 @@ public class View implements Displayable {
 	public void display() {
 		jframe.setVisible(true);
 	};
+
+    
+	public class moveActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			jframe.setVisible(false);
+			new MainPage(user, null).display();
+		}
+	}
 }

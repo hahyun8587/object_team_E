@@ -16,15 +16,13 @@ import java.util.regex.PatternSyntaxException;
 import java.sql.SQLException;
 
 import java.util.ArrayList;
-import java.lang.Thread;
 import com.DB.*;
 import com.DB.loader.*;
-import com.display.*;
-import com.display.page.*;
+import com.display.actionListener.MoveActionListener;
 import com.std.*;
 import com.util.*;
 
-public class MemberManagePage extends JFrame implements Displayable {
+public class MemberManagePage extends FramePage {
 	private final String[] column = {"ID","이름"};
 	
 	private JScrollPane scrolledTable;
@@ -32,14 +30,19 @@ public class MemberManagePage extends JFrame implements Displayable {
 	private JPanel buttonPanel;
 	private JButton usergroupbutton;
 	private JButton creatememberbutton;
+	private JButton backBtn;
 	private String[][] content;
 	private UserAuthentication ua;
 	private DAO dao;
 	private MemberManagePage mp;
 	private DefaultTableModel tableModel;
 
-	public MemberManagePage(){
-		
+	private Color color;
+	public MemberManagePage(User user, Color color){
+		super(user, color);
+
+		this.color = color;
+
 		try{
 			dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL,GlobalVariables.ID, GlobalVariables.PASSWORD);
 
@@ -79,8 +82,14 @@ public class MemberManagePage extends JFrame implements Displayable {
 		
 		usergroupbutton = new JButton("user group");
 		creatememberbutton = new JButton("add member");
+		backBtn = new JButton("뒤로가기");
+
+		//backBtn.addActionListener(new MoveActionListener(new MainPage(user, color), this));
+		
+		backBtn.addActionListener(new moveActionListener());
 		buttonPanel.add(usergroupbutton);
 		buttonPanel.add(creatememberbutton);
+		buttonPanel.add(backBtn);
 		this.add(buttonPanel);
 		
 		mp = this;
@@ -102,5 +111,13 @@ public class MemberManagePage extends JFrame implements Displayable {
 
 	public void display() {
 		setVisible(true);
+	}
+
+	
+	public class moveActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			setVisible(false);
+			new MainPage(user, color).display();
+		}
 	}
 }

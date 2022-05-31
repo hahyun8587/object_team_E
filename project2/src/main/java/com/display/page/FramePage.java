@@ -3,12 +3,16 @@ package com.display.page;
 import javax.swing.JFrame;
 import java.awt.Color;
 
-public class FramePage extends JFrame {
+import com.std.User;
+
+public abstract class FramePage extends JFrame implements Displayable {
+    protected User user;
+    
     public FramePage() {}
     
-    public FramePage(Color color) {
-        setBackground(color);
+    public FramePage(User user, Color color) {
+        setBackground(color);  
+        
+        this.user = user;
     }
-
-
 }

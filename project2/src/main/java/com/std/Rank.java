@@ -12,8 +12,8 @@ import com.util.search.RecordSearch;
  */
 public abstract class Rank {
     private String role;
-    protected RecordManager manager;
     private Selector selector;
+    public RecordManager manager;
 
     /**
      * Constructs <code>Rank</code> object with <code>role</code>.
@@ -48,6 +48,4 @@ public abstract class Rank {
     public void setRecordManager(int i) {
         manager = selector.selectManager(i);
     }
-
-
 }

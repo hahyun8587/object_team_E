@@ -15,6 +15,8 @@ public class PartTimeLoader extends RankLoader {
      * Constructs a <code>PartTimeLoader</code> object.
      */
     public PartTimeLoader(String id) {
+        super(id);
+        
         sql = GlobalVariables.PARTTIME_QUERY;
     }
     

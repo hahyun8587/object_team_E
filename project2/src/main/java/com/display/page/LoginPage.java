@@ -4,9 +4,10 @@ import java.awt.event.*;
 import java.awt.Color;
 import javax.swing.*;
 
-import com.display.page.FramePage;
+import com.std.User;
+import com.util.UserAuthentication;
 
-public class LoginPage extends FramePage implements Displayable {
+public class LoginPage extends FramePage {
 	private JPanel loginPanel = new JPanel();
 	private JLabel idLabel = new JLabel("아이디");
 	private JLabel pwLabel = new JLabel("비밀번호 ");
@@ -14,15 +15,17 @@ public class LoginPage extends FramePage implements Displayable {
 	private JPasswordField pwText = new JPasswordField();
 	private JButton loginBtn = new JButton("로그인");
 	private JButton idpwSearchBtn = new JButton("아이디/비밀번호 찾기");
+	
+	private UserAuthentication ua;
 
-	private String[] data = null;
-
-	public LoginPage() {
+	public LoginPage(UserAuthentication ua) {
+		this.ua = ua;
 		
 		setTitle("로그인 창");
+		setSize(350, 150);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		loginPanel.setLayout(null);
-		setContentPane(loginPanel);
-		
 		idLabel.setBounds(10, 10, 100, 25);
 		pwLabel.setBounds(10, 40, 100, 25);
 		idText.setBounds(100, 10, 100, 25);
@@ -30,6 +33,11 @@ public class LoginPage extends FramePage implements Displayable {
 		loginBtn.setBounds(10, 80, 120, 25);
 		idpwSearchBtn.setBounds(160, 80, 120, 25);
 		
+		idLabel.setHorizontalAlignment(NORMAL);
+		pwLabel.setHorizontalAlignment(NORMAL);
+
+		loginBtn.addActionListener(new LoginActionListener());
+
 		loginPanel.add(idLabel);
 		loginPanel.add(idText);
 		loginPanel.add(pwLabel);
@@ -37,43 +45,25 @@ public class LoginPage extends FramePage implements Displayable {
 		loginPanel.add(loginBtn);
 		loginPanel.add(idpwSearchBtn);
 
-		idLabel.setHorizontalAlignment(NORMAL);
-		pwLabel.setHorizontalAlignment(NORMAL);
-
-		setSize(350, 150);
+		setContentPane(loginPanel);
 
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
-		loginBtn.addActionListener(new ActionListener() {
+	}
 
-			public void actionPerformed(ActionEvent e) {	
-				data = new String[2];
-				data[0] = idText.getText();
-				data[1] = new String(pwText.getPassword());
-				
+	private class LoginActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			User user = User.login(ua, idText.getText(), new String(pwText.getPassword()));
+
+			if(user != null) {
 				dispose();
+				new MainPage(user, null).display();
 			}
-		});
-		/* 
-		idpwSearchBtn.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "아이디 비번 찾기 기능~~", "아이디/비밀번호 찾기", JOptionPane.DEFAULT_OPTION);
-			}
-		});
-		*/
+			else 
+				JOptionPane.showMessageDialog(null, "아이디나 비밀번호를 다시 확인해주세요.", "로그인 실패", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 	public void display() {
 		setVisible(true);
-	}
-
-	public void setData(String[] data) {
-		this.data = data;
-	}
-
-	public String[] getData() {
-		return data;
 	}
 }

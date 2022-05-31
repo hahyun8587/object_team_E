@@ -31,9 +31,26 @@ public class Job extends Record{
      */
     public Job(String name, String dueDate, int priority) {
         super(name);
+        
         this.dueDate = dueDate;
         progress = 0;
         this.priority = priority;
+    }
+
+    /**
+     * Gets due date of job.
+     * @return due date of job
+     */
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public int getPriority() {
+        return priority;
     }
 
     /**

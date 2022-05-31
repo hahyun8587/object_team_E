@@ -18,26 +18,37 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
  
-public class FilePage extends JFrame implements Displayable{
+import com.display.actionListener.MoveActionListener;
+import com.std.User;
+
+public class FilePage extends FramePage {
     JTextArea ta;
     File f;
-    public FilePage(String title) {
-        setTitle(title);
+
+    Color color;
+    public FilePage(User user, Color color) {
+        super(user, color);
+
+        this.color = color;
+
+        setTitle("제목없음");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JMenu mfile=new JMenu("파일");
+        JMenu mfile = new JMenu("파일");
         
-        JMenuItem mOpen=new JMenuItem("열기");
-        JMenuItem mNew=new JMenuItem("새파일");
-        JMenuItem mSave=new JMenuItem("저장");
-        final JMenuItem mSaveAs=new JMenuItem("다른이름으로 저장");
-        JMenuItem mExit=new JMenuItem("끝내기");
-        
+        JMenuItem mOpen= new JMenuItem("열기");
+        JMenuItem mNew= new JMenuItem("새파일");
+        JMenuItem mSave= new JMenuItem("저장");
+        final JMenuItem mSaveAs = new JMenuItem("다른이름으로 저장");
+        JMenuItem mExit= new JMenuItem("끝내기");
+        JMenuItem back = new JMenuItem("뒤로가기");
+
         mfile.add(mOpen);
         mfile.add(mNew);
         mfile.add(mSave);
         mfile.add(mSaveAs);
         mfile.addSeparator();
         mfile.add(mExit);
+        mfile.add(back);
         
         JMenuBar mb=new JMenuBar();
         mb.add(mfile);
@@ -97,11 +108,11 @@ public class FilePage extends JFrame implements Displayable{
                 System.exit(0);
             }
         });
+
+        back.addActionListener(new moveActionListener());
         
         
-        setSize(500,400);
-        setVisible(true);
-        
+        setSize(500,400);    
     }
 
     private void fileRead(File f) {
@@ -139,4 +150,11 @@ public class FilePage extends JFrame implements Displayable{
 		setVisible(true);
 	};
 
+    
+	public class moveActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			setVisible(false);
+			new MainPage(user, color).display();
+		}
+	}
 }

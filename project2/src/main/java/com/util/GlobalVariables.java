@@ -14,10 +14,10 @@ public class GlobalVariables {
     /*Queries*/
     public static final String USER_LIST_QUERY = "SELECT id, password, name, _rank FROM user";
     public static final String PARTTIME_QUERY = "SELECT role from employee where id = ?";
-    public static final String FULLTIME_QUERY = "SELECT role, department from employee where id = ?";
-    public static final String SCHEDULED_LIST_QUERY = "SELECT id, name, alarm FROM schedule ORDER BY name"; 
+    public static final String FULLTIME_QUERY = "SELECT role, dept from employee where id = ?";
+    public static final String SCHEDULED_LIST_QUERY = "SELECT id, name, date, alarm FROM schedule ORDER BY name"; 
     public static final String CONFERENCED_LIST_QUERY = "SELECT id, name FROM conference ORDER BY name";
-    public static final String ASSIGNED_LIST_QUERY = "SELECT id, name FROM job ORDER BY name";
+    public static final String ASSIGNED_LIST_QUERY = "SELECT id, name, due_date, progress, priority FROM job ORDER BY name";
         
     public static final String[] RECORDED_LIST_QUERY = { CONFERENCED_LIST_QUERY, ASSIGNED_LIST_QUERY, SCHEDULED_LIST_QUERY };
 } 

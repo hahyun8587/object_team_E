@@ -2,13 +2,10 @@ package com.display.page;
 
 // 작성자: 허승돈
 
-import java.awt.GridLayout;
-
 import javax.swing.*;
-
 import java.awt.*;
 
-public class UserGroupDisplay extends FramePage implements Displayable {
+public class UserGroupDisplay extends FramePage {
 	private JComboBox<String> groupList;
 	private JButton selectBtn;
 

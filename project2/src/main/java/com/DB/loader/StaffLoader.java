@@ -14,7 +14,9 @@ public class StaffLoader extends RankLoader {
     /**
      * Constructs a <code>StaffLoader</code> object.
      */
-    public StaffLoader() {
+    public StaffLoader(String id) {
+        super(id);
+        
         sql = GlobalVariables.FULLTIME_QUERY;
     }
 

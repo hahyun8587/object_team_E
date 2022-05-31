@@ -9,7 +9,9 @@ public class TeamLeaderLoader extends RankLoader {
     /**
      * Constructs <code>TeamLeaderLoader with <code>users</code>. 
      */
-    public TeamLeaderLoader() {
+    public TeamLeaderLoader(String id) {
+        super(id);
+        
         sql = GlobalVariables.FULLTIME_QUERY;
     }
     

@@ -2,6 +2,7 @@ package com.main;
 
 import java.util.ArrayList;
 import java.lang.reflect.Constructor;
+import java.sql.SQLException;
 
 import com.DB.*;
 import com.DB.loader.*;
@@ -10,21 +11,27 @@ import com.record.records.*;
 import com.std.*;
 import com.util.*;
 import com.util.builder.*;
+import com.display.page.*;
 
 /**
  * Class that represents team collaboration tool program.
  * This class is applied facade design pattern.
  */
 public class TeamCollaborationToolProgram {
-    private DAO dao;
+    private DAO dao;   
     private UserAuthentication ua;
 
     /**
-     * Constructs <code>TeamCollaborationToolProgram</code> object with <code>dao</code>.
-     * @param dao <code>DAO</code> object 
+     * Constructs <code>TeamCollaborationToolProgram</code> object.
      */
-    public TeamCollaborationToolProgram(DAO dao) {
-        this.dao = dao;
+    public TeamCollaborationToolProgram() {
+        try {
+            dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL, GlobalVariables.ID, GlobalVariables.PASSWORD);
+        } catch(ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -90,11 +97,7 @@ public class TeamCollaborationToolProgram {
     }
 
     public void start() {
-        
-
-
-
-
+        new LoginPage(ua).display();
 
 
 

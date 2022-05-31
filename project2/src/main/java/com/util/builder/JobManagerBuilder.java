@@ -10,13 +10,13 @@ import com.record.manager.JobManager;
  * Class that builds <code>JobManager</code> object.
  * This class is applied builder design pattern.
  */
-public class JobMangerBuilder extends RecordManagerBuilder {
+public class JobManagerBuilder extends RecordManagerBuilder {
     
     /**
      * Constructs <code>JobManagerBuilder</code> object with <code>recordeds</code>.
      * @param recordeds array list of <code>Assigned</code> object that used to construct <code>JobManager</code> object
      */
-    public JobMangerBuilder(ArrayList<Recorded> recordeds) {
+    public JobManagerBuilder(ArrayList<Recorded> recordeds) {
         super(recordeds);
     }
 

@@ -12,6 +12,14 @@ import java.sql.SQLException;
 public abstract class RankLoader extends Loader {
     private String id;
 
+    /**
+     * Constructs a specific rank loader with <code>id</code>.
+     * @param id an id of user
+     */
+    public RankLoader(String id) {
+        this.id = id;
+    }
+
     @Override
     protected void prepare(PreparedStatement pstmt) throws SQLException {
         pstmt.setString(1, id);
