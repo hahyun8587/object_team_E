@@ -25,12 +25,12 @@ public class TeamLeader extends FullTime {
     /**
      * Deletes a specific record to an users' specific record manager whose id is <code>id</code>.
      * @param id an id of user whose specific record manager to which its specific recorded is deleted
-     * @param i an index of the recorded to delete
+     * @param recordName a name of recorded to remove
      * @return 0 if succeeds, otherwise, -1
      * @throws SQLException
      */
-    public int deleteRecordFrom(String id, int i) throws SQLException {
-        return manager.deleteFrom(id, i);
+    public int deleteRecordFrom(String id, String recordName) throws SQLException {
+        return manager.deleteFrom(id, recordName);
     }
 
     public void manageUser() {

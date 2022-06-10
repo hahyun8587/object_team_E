@@ -44,12 +44,19 @@ public abstract class RecordManager {
      */
     public void register(String[] args) throws SQLException {
         Recorded recorded = create(args);
-        sql = Query.getInsertQuery(recorded);
+        sql = getInsertQuery(recorded);
 
         recordeds.add(recorded);
         _notifyAll();
     }
     
+    /**
+     * Gets a SQL query for inserting a speicific recorded into the database. 
+     * @param recorded a recorded to add
+     * @return a SQL query for inserting a specific recorded into the database
+     */
+    protected abstract String getInsertQuery(Recorded recorded);
+
     /**
      * Adds a specific recorded to an user's specific record manager whose id is <code>id</code>.  
      * @param id an id of user whose specific record manager to which its specific record is added
@@ -81,12 +88,14 @@ public abstract class RecordManager {
     /**
      * Removes an ith specific recorded from an user's specific record manager whose id is <code>id</code>.
      * @param id an id of user whose specific record manager from which its specific record is deleted 
-     * @param i an index of the recorded to remove
+     * @param recordName name of recorded to remove
      * @return 0 if deletion succeeds, otherwise, -1
      * @throws SQLException
      */
-    public int deleteFrom(String id, int i) throws SQLException {
-        return mediator.sendDeletion(id, type, i);
+    public int deleteFrom(String id, String recordName) throws SQLException {
+        
+
+        return mediator.sendDeletion(id, type, recordName);
     }
 
     /**

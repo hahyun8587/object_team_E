@@ -36,12 +36,20 @@ public class RecordManagerMediator implements Mediator {
     } 
 
     @Override
-    public int sendDeletion(String id, int i, int j) throws SQLException {
+    public int sendDeletion(String id, int i, String recordName) throws SQLException {
         RecordManager manager = findManager(id, i);
         
         if(manager == null)
             return -1;
+        
+        ArrayList<Recorded> recordeds = manager.getRecordeds(); 
+        int n = recordeds.size();
+        int j;
 
+        for(j = 0; j < n; j++) {
+            if(recordeds.get(j).getRecord().getName().equals(recordName))
+                break;
+        }
         manager.delete(j);
 
         return 0;

@@ -7,9 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import com.display.CorePage;
+import com.display.UIDisplayer;
+import com.display.page.mainpage.MainPage;
 import com.std.User;
 
-public class View implements Displayable {
+public class FileManagePage extends CorePage {
 	String[] options = {"Staff", "PartTime", "TeamLeader"};
 	
     JFrame jframe = new JFrame();
@@ -23,11 +26,9 @@ public class View implements Displayable {
     JLabel ㅣ1 = new JLabel("회의제목 : ");
     JLabel ㅣ2 = new JLabel("참여 : ");
     JLabel ㅣ3 = new JLabel("회의날짜 : ");
-    JLabel ㅣ4 = new JLabel("검색내용 : ");
+    JLabel ㅣ4 = new JLabel("검색내용 : ");;
     
-    User user;
-    
-    View(User user) {
+    public FileManagePage(UIDisplayer displayer, User user) {
         this.user = user;
         GUI_init();
     }

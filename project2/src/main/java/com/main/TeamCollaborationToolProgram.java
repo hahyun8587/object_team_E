@@ -11,7 +11,7 @@ import com.record.records.*;
 import com.std.*;
 import com.util.*;
 import com.util.builder.*;
-import com.display.page.*;
+import com.display.UIDisplayer;
 
 /**
  * Class that represents team collaboration tool program.
@@ -43,7 +43,6 @@ public class TeamCollaborationToolProgram {
         try {
             Mediator mediator;
             ArrayList<RecordManager>[] managers;
-            Director director;
             String[] bnames = { "ConferenceManagerBuilder", "JobManagerBuilder", "ScheduleManagerBuilder" };
             String bpath = "com.util.builder", lpath = "com.DB.loader";
             int ntype = RecordType.values().length;
@@ -97,12 +96,7 @@ public class TeamCollaborationToolProgram {
     }
 
     public void start() {
-        new LoginPage(ua).display();
-
-
-
-
-
+        new UIDisplayer(ua).displayCurrentPage();
     }
 
     public void terminate() {

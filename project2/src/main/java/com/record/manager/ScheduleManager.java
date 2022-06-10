@@ -2,6 +2,7 @@ package com.record.manager;
 
 import java.util.ArrayList;
 
+import com.DB.Query;
 import com.record.records.Recorded;
 import com.record.records.Schedule;
 import com.record.records.Scheduled;
@@ -28,6 +29,11 @@ public class ScheduleManager extends RecordManager {
     @Override
     protected Recorded create(String[] args) {
         return new Scheduled(recordeds.get(0).getParticipant(), new Schedule(args[0], args[1]), args[2]);
+    }
+
+    @Override
+    protected String getInsertQuery(Recorded recorded) {
+        return Query.getInsertScheduleQuery(recorded);
     }
 
     public void reserveAlarm() {

@@ -2,6 +2,7 @@ package com.record.manager;
 
 import java.util.ArrayList;
 
+import com.DB.Query;
 import com.record.records.Conference;
 import com.record.records.Conferenced;
 import com.record.records.Recorded;
@@ -28,6 +29,11 @@ public class ConferenceManager extends RecordManager {
 
     @Override
     protected Recorded create(String[] args) {
-        return new Conferenced(recordeds.get(0).getParticipant(), new Conference(args[0]));
+        return new Conferenced(recordeds.get(0).getParticipant(), new Conference(args[0], args[1]));
+    }
+
+    @Override
+    protected String getInsertQuery(Recorded recorded) {
+        return Query.getInsertConferenceQuery(recorded);
     }
 }

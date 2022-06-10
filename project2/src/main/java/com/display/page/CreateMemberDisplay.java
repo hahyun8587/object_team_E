@@ -7,12 +7,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CreateMemberDisplay extends JFrame implements Displayable {
+public class CreateMemberDisplay extends JFrame {
 	private final String[] labels= {"ID","Password","이름","직책"};
 	private JTextField []field = new JTextField[4];
 	private JButton confirmBtn;
 	private JButton cancelBtn;
 	private JPanel textPnl, btnPnl;
+	
 	public CreateMemberDisplay(MemberManagePage mp)
 	{
 		setTitle("Add Member Manager");

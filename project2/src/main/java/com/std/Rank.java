@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.record.manager.RecordManager;
 import com.record.records.Record;
+import com.util.RecordType;
 import com.util.Selector;
 import com.util.search.RecordSearch;
 
@@ -27,6 +28,14 @@ public abstract class Rank {
         /*implement*/
     }
 
+    /**
+     * Gets a selected specific record manager.
+     * @return a selected specific record manager
+     */
+    public RecordManager getSelectedManager() {
+        return manager;
+    }
+
     public ArrayList<Record> searchRecord(RecordSearch searchMethod) {
         manager.setSearchMethod(searchMethod);
         
@@ -43,9 +52,9 @@ public abstract class Rank {
 
     /**
      * Sets a specific record manager of <code>FullTime</code> object.
-     * @param i an index of specific record manager to set
+     * @param type an record type of specific record manager to set
      */
-    public void setRecordManager(int i) {
-        manager = selector.selectManager(i);
+    public void setRecordManager(RecordType type) {
+        manager = selector.selectManager(type.ordinal());
     }
 }

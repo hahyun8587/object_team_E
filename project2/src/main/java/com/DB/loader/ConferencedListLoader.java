@@ -29,7 +29,7 @@ public class ConferencedListLoader extends RecordedListLoader {
 
     @Override
     protected Record getRecord(ResultSet rs) throws SQLException {
-        return new Conference(rs.getString("name"));
+        return new Conference(rs.getString("name"), rs.getString("date"));
     }
 
     @Override

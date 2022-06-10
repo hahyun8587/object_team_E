@@ -28,10 +28,20 @@ public class Scheduled extends Recorded{
     }
 
     /**
+     * Gets alarm of <code>Scheduled</code> object.
+     * @return alarm of <code>Scheduled</code> object
+     */
+    public String getAlarm() {
+        return alarm;
+    }
+
+    /**
      * Sets alarm.
      * @param alarm alarm to set
      */
     public void setAlarm(String alarm) {
         this.alarm = alarm;
     }
+
+
 }

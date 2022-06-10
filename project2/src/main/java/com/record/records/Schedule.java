@@ -18,6 +18,14 @@ public class Schedule extends Record {
     }
 
     /**
+     * Gets date of the schedule.
+     * @return date of the schedule
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
      * Sets date of the schedule.
      * @param date date of the schedule to set
      */

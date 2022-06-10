@@ -3,7 +3,7 @@ package com.record.records;
 /**
  * Class that represents job.
  */
-public class Job extends Record{
+public class Job extends Record {
     private String dueDate;
     private int progress;
     private int priority;

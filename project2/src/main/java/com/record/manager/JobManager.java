@@ -2,6 +2,7 @@ package com.record.manager;
 
 import java.util.ArrayList;
 
+import com.DB.Query;
 import com.record.records.Assigned;
 import com.record.records.Job;
 import com.record.records.Recorded;
@@ -28,6 +29,11 @@ public class JobManager extends RecordManager {
 
     @Override
     protected Recorded create(String[] args) {
-        return new Assigned(recordeds.get(0).getParticipant(), new Job(args[0], args[1], Integer.parseInt(args[2])));
+        return new Assigned(recordeds.get(0).getParticipant(), new Job(args[0], args[1], Integer.parseInt(args[2]), Integer.parseInt(args[3])));
+    }
+
+    @Override
+    protected String getInsertQuery(Recorded recorded) {
+        return Query.getInsertJobQuery(recorded);
     }
 }

@@ -9,9 +9,20 @@ public class Conference extends Record {
     /**
      * Constructs <code>Conference</code> object with <code>name</code>.
      * @param name name of the conference
+     * @param date date of the conference
      */    
-    public Conference(String name) {
+    public Conference(String name, String date) {
         super(name);
+        
+        this.date = date;
+    }
+
+    /**
+     * Gets date of the conference.
+     * @return date of the conference
+     */
+    public String getDate() {
+        return date;
     }
 
     /**

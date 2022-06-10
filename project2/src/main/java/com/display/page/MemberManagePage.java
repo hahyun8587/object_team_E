@@ -18,7 +18,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import com.DB.*;
 import com.DB.loader.*;
-import com.display.actionListener.MoveActionListener;
+import com.display.FramePage;
+import com.display.UIDisplayer;
+import com.display.page.mainpage.MainPage;
 import com.std.*;
 import com.util.*;
 
@@ -37,11 +39,8 @@ public class MemberManagePage extends FramePage {
 	private MemberManagePage mp;
 	private DefaultTableModel tableModel;
 
-	private Color color;
-	public MemberManagePage(User user, Color color){
-		super(user, color);
-
-		this.color = color;
+	public MemberManagePage(UIDisplayer displayer, User user){
+		super(displayer, user);
 
 		try{
 			dao = DAO.getDAO(GlobalVariables.DRIVER, GlobalVariables.URL,GlobalVariables.ID, GlobalVariables.PASSWORD);

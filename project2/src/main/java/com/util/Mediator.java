@@ -25,11 +25,11 @@ public interface Mediator {
      * Removes a specific recorded to a specific record manager whose users' id is <code>id</code>.
      * @param id an id of user who owns a specific record manager from which remove a specific recorded  
      * @param i an index that indicates a type of the recorded
-     * @param j an index of the recorded to remove
+     * @param recordName a name of the recorded to remove
      * @return 0 if deletion succeeds, otherwise, -1
      * @throws SQLException
      */
-    public abstract int sendDeletion(String id, int i, int j) throws SQLException;
+    public abstract int sendDeletion(String id, int i, String recordName) throws SQLException;
 
     /**
      * Merges all of the specific recordeds of all of the users.

@@ -17,8 +17,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
- 
-import com.display.actionListener.MoveActionListener;
+
+import com.display.FramePage;
+import com.display.listener.MoveFowardActionListener;
+import com.display.page.mainpage.MainPage;
 import com.std.User;
 
 public class FilePage extends FramePage {
@@ -50,7 +52,7 @@ public class FilePage extends FramePage {
         mfile.add(mExit);
         mfile.add(back);
         
-        JMenuBar mb=new JMenuBar();
+        JMenuBar mb = new JMenuBar();
         mb.add(mfile);
         setJMenuBar(mb);
         
@@ -146,11 +148,6 @@ public class FilePage extends FramePage {
         
     }
 
-	public void display() {
-		setVisible(true);
-	};
-
-    
 	public class moveActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			setVisible(false);
